@@ -139,3 +139,26 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Star Trail Effect */
+.star-trail {
+  position: absolute;
+  pointer-events: none; /* Let clicks pass through */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.4);
+  z-index: 9999;
+  animation: starFade 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  /* Start centered on cursor */
+  transform: translate(-50%, -50%);
+}
+
+@keyframes starFade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    /* Drift slightly upwards and rotate as it fades */
+    transform: translate(-50%, -80%) scale(0.3) rotate(90deg);
+  }
+}
