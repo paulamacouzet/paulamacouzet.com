@@ -1,0 +1,369 @@
+:root {
+  --font-body: 'Poppins', sans-serif;
+  --color-text: #8d8880;
+  --color-bg: #fffbf7;
+  --color-philosophy: #4e593e;
+  --color-about: #b96289;
+  --color-cards-text: #f8f2ea;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Mobile Blocker (visible on small screens) */
+#mobile-blocker {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111;
+  color: white;
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.blocker-content h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+.blocker-content p {
+  font-size: 1rem;
+  opacity: 0.7;
+  letter-spacing: 0.05em;
+}
+
+/* Desktop Content */
+#desktop-content {
+  display: block;
+}
+
+/* Header */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 251, 247, 0.95);
+  z-index: 100;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex: 1;
+}
+
+.nav-center {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  text-transform: lowercase;
+  font-weight: 300;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+.brand-logo {
+  height: 18px; /* adjust size based on the logo image */
+  object-fit: contain;
+}
+
+.center-logo {
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Hero Section */
+.hero-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+  background-color: var(--color-philosophy);
+  padding: 8rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.philosophy-text {
+  text-align: center;
+  color: var(--color-bg);
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 4rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.philosophy-image {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+}
+
+/* About Section */
+.about-section {
+  background-color: var(--color-about);
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.about-image-container {
+  flex: 0 0 45%;
+  height: 100vh; /* Takes full vertical height of screen */
+  position: relative;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
+}
+
+.about-text-container {
+  flex: 1;
+  padding: 4rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--color-cards-text); /* Using the off-white color */
+}
+
+.about-text-container h3 {
+  font-weight: 400;
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.05em;
+}
+
+.about-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-list li {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+.diamond {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+/* Experience Section */
+.experience-section {
+  background-image: url('/images/Texture_background.png');
+  background-size: cover;
+  background-position: center;
+  padding: 6rem 2rem 10rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.experience-header {
+  margin-bottom: 4rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.experience-title-img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+}
+
+.experience-cards-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.experience-card {
+  flex: 1;
+  min-width: 300px;
+  background-color: var(--color-philosophy);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  color: var(--color-cards-text);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.card-img {
+  width: 140px;
+  height: auto;
+  margin: 0 auto 3rem auto;
+  display: block;
+  object-fit: contain;
+}
+
+.experience-card p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.experience-card strong {
+  font-weight: 500;
+}
+
+.card-list {
+  list-style-position: inside;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+}
+
+.card-list li {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.italic-text {
+  font-style: italic;
+}
+
+/* Footer Section */
+.main-footer {
+  background-color: var(--color-bg);
+  padding: 4rem 2rem;
+  border-top: 1px solid rgba(141, 136, 128, 0.2);
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+.footer-logo {
+  height: 20px;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.footer-text {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--color-text);
+  opacity: 0.7;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  text-transform: lowercase;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 0.6;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+/* Media Query to block mobile */
+@media (max-width: 768px) {
+  #desktop-content {
+    display: none !important;
+  }
+  
+  #mobile-blocker {
+    display: flex !important;
+  }
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - Wedding Identity - Paula Macouzet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .gallery-placeholder {
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .gallery-placeholder h1 {
+        font-family: 'Cinzel', serif;
+        font-size: 3rem;
+        font-weight: 400;
+        margin-bottom: 2rem;
+      }
+      
+      .gallery-placeholder p {
+        font-size: 1.2rem;
+        opacity: 0.7;
+      }
+      
+      .back-btn {
+        margin-top: 3rem;
+        display: inline-block;
+        padding: 1rem 2rem;
+        border: 1px solid var(--color-text);
+        text-decoration: none;
+        color: var(--color-text);
+        border-radius: 30px;
+        transition: all 0.3s ease;
+      }
+      
+      .back-btn:hover {
+        background-color: var(--color-text);
+        color: var(--color-bg);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Desktop Content -->
+    <div id="desktop-content">
+      <header class="main-header">
+        <div class="nav-left">
+          <a href="/" class="brand-link">
+            <img src="/images/logo_paulamacouzet.png" alt="Paula Macouzet" class="brand-logo">
+          </a>
+        </div>
+        <div class="nav-center">
+          <a href="/weddings/" class="center-logo-link">
+            <img src="/images/Logo_weddings.png" alt="Wedding Identity Logo" class="center-logo">
+          </a>
+        </div>
+        <div class="nav-right">
+          <!-- Empty for balance -->
+        </div>
+      </header>
+      
+      <main class="gallery-placeholder">
+        <h1>Gallery</h1>
+        <p>Carousel gallery is currently under construction.</p>
+        <a href="/weddings/" class="back-btn">Back to Experience</a>
+      </main>
+    </div>
+  </body>
+</html>
