@@ -26,7 +26,7 @@ body {
   overflow: hidden; /* Prevent scroll on landing */
 }
 
-/* Background image handling with blur effect */
+/* Background image handling with blur effect and drifting clouds */
 .background-image {
   position: absolute;
   top: 0;
@@ -34,15 +34,17 @@ body {
   width: 100%;
   height: 100%;
   background-image: url('/images/Hero_image_main_page.png');
-  background-size: cover;
-  background-position: center;
+  /* Make the background larger so we have room to pan */
+  background-size: 130%; 
+  background-position: 0% 50%;
   z-index: -2;
   
   /* Initial state: blurry and slightly scaled */
   filter: blur(20px) brightness(1.2);
   transform: scale(1.1);
-  animation: bgFocus var(--transition-slow) forwards;
-  animation-delay: 0.5s;
+  /* Play both animations: focus first, then infinite slow drift */
+  animation: bgFocus var(--transition-slow) forwards, driftClouds 120s linear infinite alternate;
+  animation-delay: 0.5s, 0s;
 }
 
 .bg-overlay {
@@ -118,6 +120,15 @@ body {
   to {
     filter: blur(0) brightness(1);
     transform: scale(1);
+  }
+}
+
+@keyframes driftClouds {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
   }
 }
 
