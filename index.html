@@ -8,6 +8,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+      /* Preloader styles */
+      body { opacity: 0; transition: opacity 0.5s ease; }
+      body.app-ready { opacity: 1; }
+    </style>
+    <script>
+      // Preload large background image to prevent progressive rendering
+      const bgImg = new Image();
+      bgImg.src = '/images/Hero_image_main_page.png';
+      bgImg.onload = () => {
+        document.body.classList.add('app-ready');
+      };
+      // Fallback in case of error or extremely slow network
+      setTimeout(() => { document.body.classList.add('app-ready'); }, 8000);
+    </script>
   </head>
   <body>
     <!-- Background that will fade in -->

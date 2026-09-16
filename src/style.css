@@ -140,6 +140,12 @@ body {
   }
 }
 
+/* Pause animations until preloader is done */
+body:not(.app-ready) .background-image,
+body:not(.app-ready) .fade-in-dramatic {
+  animation-play-state: paused !important;
+}
+
 /* Star Trail Effect */
 .star-trail {
   position: absolute;
