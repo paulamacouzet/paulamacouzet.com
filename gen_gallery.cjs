@@ -1,10 +1,8 @@
 const fs = require('fs');
 
 const files = [
-"Gallery1.png",
-"Gallery2.png",
-"Gallery3.png",
-"Gallery4.png",
+"Gallery_Tequila_handpainted_bottle.png",
+"Gallery_Tequila_handpainted_bottle_Patron.png",
 "Gallery_Culinary Narratives Custom Buffet Signage.png",
 "Gallery_Custom Hand-Painted Wine Bottles_1.png",
 "Gallery_Custom Hand-Painted Wine Bottles_2.png",
@@ -27,8 +25,6 @@ const files = [
 "Gallery_Place Cards & Seating Arrangements_1.png",
 "Gallery_Place Cards & Seating Arrangements_2.png",
 "Gallery_Place Cards & Seating Arrangements_3.png",
-"Gallery_Tequila_handpainted_bottle.png",
-"Gallery_Tequila_handpainted_bottle_Patron.png",
 "Gallery_Welcome Signs_Favors_Stationery.png"
 ];
 
@@ -81,7 +77,7 @@ const html = `<!doctype html>
       
       <main class="gallery-page">
         <div class="gallery-header">
-          <h1 style="font-family: 'Poppins', sans-serif; font-style: italic; font-weight: 300; text-transform: lowercase; font-size: 2.5rem; color: #8d8880;">selected works</h1>
+          <h1 style="font-family: 'Poppins', sans-serif; font-style: italic; font-weight: 300; text-transform: lowercase; font-size: 1.5rem; color: #8d8880;">selected works</h1>
         </div>
         
         <div class="gallery-carousel-wrapper">

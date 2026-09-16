@@ -69,29 +69,38 @@
           <p>Tell us about your story and your wedding vision.</p>
         </div>
 
-        <form class="inquire-form-container" action="#" method="POST">
+        <!-- You will need to replace this action URL with your Formspree endpoint once created -->
+        <form class="inquire-form-container" action="https://formspree.io/f/REPLACE_WITH_YOUR_ID" method="POST">
           <div class="form-group">
-            <input type="text" class="minimal-input" placeholder="Full Name *" required>
+            <input type="text" name="name" class="minimal-input" placeholder="Full Name *" required>
           </div>
           
           <div class="form-group">
-            <input type="email" class="minimal-input" placeholder="Email Address *" required>
+            <input type="email" name="email" class="minimal-input" placeholder="Email Address *" required>
           </div>
           
           <div class="form-group">
-            <input type="text" class="minimal-input" placeholder="Wedding Date (if known)">
+            <input type="text" name="wedding_date" class="minimal-input" placeholder="Wedding Date (if known)">
           </div>
           
           <div class="form-group">
-            <input type="text" class="minimal-input" placeholder="Wedding Location / Venue">
+            <input type="text" name="wedding_location" class="minimal-input" placeholder="Wedding Location / Venue">
           </div>
           
           <div class="form-group">
-            <textarea class="minimal-input" placeholder="Tell us about your wedding vision and what you're looking for... *" required></textarea>
+            <input type="text" name="wedding_planner" class="minimal-input" placeholder="Do you have a wedding planner? If so, who?">
+          </div>
+          
+          <div class="form-group">
+            <textarea name="vision" class="minimal-input" placeholder="Tell us about your wedding vision and what you're looking for... *" required></textarea>
           </div>
           
           <button type="submit" class="submit-btn">Send Inquiry</button>
         </form>
+        
+        <div style="margin-top: 3rem; text-align: center;">
+          <p style="font-family: var(--font-body); font-style: italic; color: var(--color-text); opacity: 0.8; font-weight: 300;">or send me an email: <a href="mailto:paulamacouzet@gmail.com" style="color: var(--color-text); text-decoration: none;">paulamacouzet@gmail.com</a></p>
+        </div>
       </main>
 
       <footer class="main-footer">
