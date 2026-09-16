@@ -75,7 +75,7 @@ const html = `<!doctype html>
         <div class="nav-right">
           <nav class="nav-links">
             <a href="/weddings/#experience">experience</a>
-            <a href="/weddings/gallery/">gallery</a>
+            <a href="/weddings/gallery/">selected works</a>
             <a href="/weddings/inquire/">inquire</a>
           </nav>
         </div>
@@ -83,8 +83,7 @@ const html = `<!doctype html>
       
       <main class="gallery-page">
         <div class="gallery-header">
-          <h1>Gallery</h1>
-          <a href="#view-all" class="view-all-link">View all works &rarr;</a>
+          <h1 style="font-size: 2.5rem;">Selected works</h1>
         </div>
         
         <div class="gallery-carousel-wrapper">
@@ -101,7 +100,6 @@ ${itemsHtml}
           <a href="/">
             <img src="/images/logo_paulamacouzet.png" alt="Paula Macouzet" class="footer-logo">
           </a>
-          <p class="footer-text">A visual identity for a wedding that could only be yours.</p>
           <p class="copyright">&copy; 2026 Paula Macouzet. All rights reserved.</p>
         </div>
       </footer>

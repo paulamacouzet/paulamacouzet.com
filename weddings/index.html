@@ -42,7 +42,7 @@
         <div class="nav-right">
           <nav class="nav-links">
             <a href="#experience">experience</a>
-            <a href="/weddings/gallery/">gallery</a>
+            <a href="/weddings/gallery/">selected works</a>
             <a href="/weddings/inquire/">inquire</a>
           </nav>
         </div>
@@ -62,7 +62,7 @@
 
         <section id="about" class="about-section">
           <div class="about-image-container">
-            <img src="/images/Imagen_presentacion_about.png" alt="About Paula Macouzet" class="about-image">
+            <img src="/images/Imagen_presentacion_about2.png" alt="About Paula Macouzet" class="about-image">
           </div>
           <div class="about-text-container">
             <h3>We are a good match if:</h3>
@@ -130,10 +130,29 @@
           <a href="/">
             <img src="/images/logo_paulamacouzet.png" alt="Paula Macouzet" class="footer-logo">
           </a>
-          <p class="footer-text">A visual identity for a wedding that could only be yours.</p>
           <p class="copyright">&copy; 2026 Paula Macouzet. All rights reserved.</p>
         </div>
       </footer>
     </div>
+
+    <!-- Scroll Animation Script for About Section -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        
+        const listItems = document.querySelectorAll('.about-list li');
+        listItems.forEach((li, index) => {
+          li.style.transitionDelay = `${index * 0.2}s`;
+          observer.observe(li);
+        });
+      });
+    </script>
   </body>
 </html>
