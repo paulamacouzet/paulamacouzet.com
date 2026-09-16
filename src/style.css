@@ -162,3 +162,46 @@ body {
     transform: translate(-50%, -80%) scale(0.3) rotate(90deg);
   }
 }
+
+/* Media Query to block mobile */
+@media (max-width: 768px) {
+  #desktop-content,
+  .bg-overlay,
+  .background-image {
+    display: none !important;
+  }
+  
+  #mobile-blocker {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 3rem 2rem;
+    background-image: url('/images/Texture_background.png');
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-bg);
+    text-align: center;
+    z-index: 99999;
+  }
+  
+  .mobile-logo-top {
+    height: 45px;
+    object-fit: contain;
+  }
+  
+  .mobile-message {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--color-text);
+    font-weight: 300;
+    line-height: 1.8;
+  }
+  
+  .mobile-logo-bottom {
+    height: 35px;
+    object-fit: contain;
+    opacity: 0.8;
+  }
+}

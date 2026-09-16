@@ -53,6 +53,15 @@ const html = `<!doctype html>
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
+    <!-- Mobile Blocker -->
+    <div id="mobile-blocker">
+      <img src="/images/Logo_weddings.png" alt="Wedding Identity" class="mobile-logo-top">
+      <div class="mobile-message">
+        <p>Enhancing mobile experience...<br><br>Please view on desktop.<br>Back shortly.</p>
+      </div>
+      <img src="/images/logo_paulamacouzet.png" alt="Paula Macouzet" class="mobile-logo-bottom">
+    </div>
+
     <!-- Desktop Content -->
     <div id="desktop-content">
       <header class="main-header">
