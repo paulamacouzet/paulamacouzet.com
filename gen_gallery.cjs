@@ -5,7 +5,6 @@ const files = [
 "Gallery2.png",
 "Gallery3.png",
 "Gallery4.png",
-"Gallery5.png",
 "Gallery_Culinary Narratives Custom Buffet Signage.png",
 "Gallery_Custom Hand-Painted Wine Bottles_1.png",
 "Gallery_Custom Hand-Painted Wine Bottles_2.png",
@@ -42,7 +41,6 @@ files.forEach(file => {
             <div class="img-wrapper">
               <img src="/images/${file}" alt="${title}" loading="lazy">
             </div>
-            <div class="gallery-caption">${title}</div>
           </div>`;
 });
 
@@ -83,7 +81,7 @@ const html = `<!doctype html>
       
       <main class="gallery-page">
         <div class="gallery-header">
-          <h1 style="font-size: 2.5rem;">Selected works</h1>
+          <h1 style="font-family: 'Poppins', sans-serif; font-style: italic; font-weight: 300; text-transform: lowercase; font-size: 2.5rem; color: #8d8880;">selected works</h1>
         </div>
         
         <div class="gallery-carousel-wrapper">

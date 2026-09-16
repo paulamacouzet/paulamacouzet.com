@@ -10,41 +10,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css" />
     <style>
-      .inquire-placeholder {
-        min-height: 80vh;
+      .inquire-page {
+        min-height: calc(100vh - 80px - 100px); /* Adjust for header and footer */
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        text-align: center;
+        padding: 4rem 2rem 8rem 2rem;
+        background-color: var(--color-bg);
       }
       
-      .inquire-placeholder h1 {
+      .inquire-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+      
+      .inquire-header h1 {
         font-family: 'Cinzel', serif;
         font-size: 3rem;
         font-weight: 400;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
+        color: #4a4a4a;
       }
       
-      .inquire-placeholder p {
-        font-size: 1.2rem;
-        opacity: 0.7;
-      }
-      
-      .back-btn {
-        margin-top: 3rem;
-        display: inline-block;
-        padding: 1rem 2rem;
-        border: 1px solid var(--color-text);
-        text-decoration: none;
-        color: var(--color-text);
-        border-radius: 30px;
-        transition: all 0.3s ease;
-      }
-      
-      .back-btn:hover {
-        background-color: var(--color-text);
-        color: var(--color-bg);
+      .inquire-header p {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        color: #8d8880;
+        font-weight: 300;
       }
     </style>
   </head>
@@ -71,10 +63,35 @@
         </div>
       </header>
       
-      <main class="inquire-placeholder">
-        <h1>Inquire</h1>
-        <p>Contact form is currently under construction.</p>
-        <a href="/weddings/" class="back-btn">Back to Weddings</a>
+      <main class="inquire-page">
+        <div class="inquire-header">
+          <h1>Inquire</h1>
+          <p>Tell us about your story and your wedding vision.</p>
+        </div>
+
+        <form class="inquire-form-container" action="#" method="POST">
+          <div class="form-group">
+            <input type="text" class="minimal-input" placeholder="Full Name *" required>
+          </div>
+          
+          <div class="form-group">
+            <input type="email" class="minimal-input" placeholder="Email Address *" required>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" class="minimal-input" placeholder="Wedding Date (if known)">
+          </div>
+          
+          <div class="form-group">
+            <input type="text" class="minimal-input" placeholder="Wedding Location / Venue">
+          </div>
+          
+          <div class="form-group">
+            <textarea class="minimal-input" placeholder="Tell us about your wedding vision and what you're looking for... *" required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Send Inquiry</button>
+        </form>
       </main>
 
       <footer class="main-footer">

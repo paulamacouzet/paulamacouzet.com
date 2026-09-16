@@ -382,7 +382,7 @@ body {
 
 .gallery-header {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 }
 
 .gallery-header h1 {
@@ -420,7 +420,7 @@ body {
   padding: 2rem 0;
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
-  align-items: flex-end; /* Align bottoms of images */
+  align-items: center; /* Center vertically */
 }
 
 .gallery-carousel::-webkit-scrollbar {
@@ -476,6 +476,67 @@ body {
 
 .next-btn {
   margin-left: 2rem;
+}
+
+/* Contact/Inquire Page */
+.inquire-form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.minimal-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1rem 0;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--color-text);
+  transition: border-color 0.3s ease;
+}
+
+.minimal-input:focus {
+  outline: none;
+  border-bottom-color: var(--color-text);
+}
+
+.minimal-input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 300;
+}
+
+textarea.minimal-input {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.submit-btn {
+  background: transparent;
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
+  padding: 1rem 3rem;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: center;
+  margin-top: 2rem;
+}
+
+.submit-btn:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
 }
 
 /* Media Query to block mobile */
