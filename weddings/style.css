@@ -606,10 +606,64 @@ textarea.minimal-input {
   color: var(--color-bg);
 }
 
+/* Thank You Page */
+.thank-you-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding: 4rem 2rem;
+  background-color: var(--color-bg);
+}
+
+.thank-you-content {
+  max-width: 600px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.thank-you-title {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 300;
+  font-style: italic;
+  color: #4a4a4a;
+  margin-bottom: 1rem;
+}
+
+.thank-you-main {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.thank-you-sub {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-weight: 300;
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.thank-you-btn {
+  text-decoration: none;
+  display: inline-block;
+}
+
 /* ---------------------------------------------------- */
 /* Mobile Responsive Overhaul (< 768px)               */
 /* ---------------------------------------------------- */
 @media (max-width: 1050px) {
+  /* Thank You Page */
+  .thank-you-title {
+    font-size: 3rem; /* Scaled down for mobile */
+  }
+
   /* 1. Hero Section */
   .hero-section {
     min-height: unset;

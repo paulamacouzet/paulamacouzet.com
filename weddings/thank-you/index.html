@@ -4,49 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/images/Logo_weddings.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inquire | Paula Macouzet</title>
+    <title>Thank You | Paula Macouzet</title>
     
-    <!-- Open Graph Meta Tags for Social/WhatsApp Sharing -->
-    <meta property="og:title" content="Inquire | Paula Macouzet" />
-    <meta property="og:description" content="Get in touch to design the visual identity of your destination wedding." />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Thank You | Paula Macouzet" />
+    <meta property="og:description" content="Thank you for your inquiry." />
     <meta property="og:image" content="https://paulamacouzet.com/images/Hero_image_weddings_page.png" />
-    <meta property="og:url" content="https://paulamacouzet.com/weddings/inquire/" />
+    <meta property="og:url" content="https://paulamacouzet.com/weddings/thank-you/" />
     <meta property="og:type" content="website" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css" />
-    <style>
-      .inquire-page {
-        min-height: calc(100vh - 80px - 100px); /* Adjust for header and footer */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 4rem 2rem 8rem 2rem;
-        background-color: var(--color-bg);
-      }
-      
-      .inquire-header {
-        text-align: center;
-        margin-bottom: 4rem;
-      }
-      
-      .inquire-header h1 {
-        font-family: 'Cinzel', serif;
-        font-size: 3rem;
-        font-weight: 400;
-        margin-bottom: 1rem;
-        color: #4a4a4a;
-      }
-      
-      .inquire-header p {
-        font-family: var(--font-body);
-        font-size: 1.1rem;
-        color: #8d8880;
-        font-weight: 300;
-      }
-    </style>
   </head>
   <body>
       <header class="main-header">
@@ -74,7 +44,7 @@
           </nav>
         </div>
         
-        <!-- Mobile Nav Toggle (Hidden on Desktop) -->
+        <!-- Mobile Nav Toggle -->
         <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Menu">
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
             <line x1="3" y1="12" x2="21" y2="12" class="line-middle"></line>
@@ -95,45 +65,12 @@
         </div>
       </header>
       
-      <main class="inquire-page">
-        <div class="inquire-header">
-          <h1>Inquire</h1>
-          <p>Tell us about your story and your wedding vision.</p>
-        </div>
-
-        <!-- You will need to replace this action URL with your Formspree endpoint once created -->
-        <form class="inquire-form-container" action="https://formspree.io/f/maenwzke" method="POST">
-          <!-- Formspree redirect to custom thank you page -->
-          <input type="hidden" name="_next" value="/weddings/thank-you/">
-          <div class="form-group">
-            <input type="text" name="name" class="minimal-input" placeholder="Full Name *" required>
-          </div>
-          
-          <div class="form-group">
-            <input type="email" name="email" class="minimal-input" placeholder="Email Address *" required>
-          </div>
-          
-          <div class="form-group">
-            <input type="text" name="wedding_date" class="minimal-input" placeholder="Wedding Date (if known)">
-          </div>
-          
-          <div class="form-group">
-            <input type="text" name="wedding_location" class="minimal-input" placeholder="Wedding Location / Venue">
-          </div>
-          
-          <div class="form-group">
-            <input type="text" name="wedding_planner" class="minimal-input" placeholder="Do you have a wedding planner? If so, who?">
-          </div>
-          
-          <div class="form-group">
-            <textarea name="vision" class="minimal-input" placeholder="Tell us about your wedding vision and what you're looking for... *" required></textarea>
-          </div>
-          
-          <button type="submit" class="submit-btn">Send Inquiry</button>
-        </form>
-        
-        <div style="margin-top: 3rem; text-align: center;">
-          <p style="font-family: var(--font-body); font-style: italic; color: var(--color-text); opacity: 0.8; font-weight: 300;">or send me an email: <a href="mailto:paulamacouzet@gmail.com" style="color: var(--color-text); text-decoration: none;">paulamacouzet@gmail.com</a></p>
+      <main class="thank-you-page">
+        <div class="thank-you-content">
+          <h1 class="thank-you-title">thank you</h1>
+          <p class="thank-you-main">I have received your inquiry. Every great story begins with a simple hello.</p>
+          <p class="thank-you-sub">I'll be reading through your details and will get back to you within 24-48 hours. In the meantime, feel free to explore more of my work.</p>
+          <a href="/weddings/gallery/" class="submit-btn thank-you-btn">return to selected works</a>
         </div>
       </main>
 
