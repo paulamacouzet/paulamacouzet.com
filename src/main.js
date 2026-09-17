@@ -2,6 +2,9 @@ import './style.css';
 
 // Star Trail Cursor Effect
 document.addEventListener('mousemove', function(e) {
+  // Desactivar en dispositivos táctiles (móviles/tablets)
+  if (window.matchMedia("(pointer: coarse)").matches) return;
+
   // Only create a star occasionally to not overload the DOM (e.g., every 3rd mousemove event)
   if (Math.random() > 0.4) return;
 
