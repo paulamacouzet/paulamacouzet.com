@@ -90,7 +90,6 @@ body {
 
 #app-content {
   opacity: 0;
-  transform: translateY(20px);
 }
 #app-content.fade-in-active {
   animation: dramaticEntrance 1s forwards cubic-bezier(0.19, 1, 0.22, 1);
@@ -98,7 +97,6 @@ body {
 @keyframes dramaticEntrance {
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -611,18 +609,19 @@ textarea.minimal-input {
 /* ---------------------------------------------------- */
 /* Mobile Responsive Overhaul (< 768px)               */
 /* ---------------------------------------------------- */
-@media (max-width: 768px) {
+@media (max-width: 1050px) {
   /* 1. Hero Section */
   .hero-section {
-    min-height: 100dvh;
-    height: 100dvh;
-    background-image: url('/images/Hero_image_main_page_mobile2.png');
-    background-size: 100% auto;
-    background-position: center center;
-    background-repeat: no-repeat;
+    min-height: unset;
+    height: 150.09vw; /* EXACT aspect ratio of the 2160x3242 image */
+    background-image: url('/images/Hero_image_main_page_mobile2.png'), url('/images/Texture_background.png');
+    background-size: 100% auto, cover;
+    background-position: center center, center center;
+    background-repeat: no-repeat, no-repeat;
     background-color: var(--color-bg);
     margin-top: 0;
     width: 100%;
+    overflow: hidden;
   }
 
   /* Adjust Header for mobile */
@@ -643,6 +642,9 @@ textarea.minimal-input {
     top: 50%;
     transform: translate(-50%, -50%);
     pointer-events: auto;
+  }
+  .center-logo {
+    height: 64px; /* 20% smaller than 80px */
   }
   .mobile-nav-toggle {
     display: flex;
@@ -696,7 +698,8 @@ textarea.minimal-input {
   }
   .mobile-nav-links a {
     text-decoration: none;
-    color: var(--color-text);
+    color: #6b4e3d; /* Café (brown) */
+    font-family: var(--font-body);
     font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: 0.1em;
@@ -707,26 +710,73 @@ textarea.minimal-input {
 
   /* 2. Philosophy Section */
   .philosophy-section {
-    padding: 4rem 1rem;
+    padding: clamp(40px, 6vh, 80px) 40px;
     flex-direction: column;
     align-items: center;
     min-height: 100dvh;
     justify-content: center;
     box-sizing: border-box;
     position: relative;
+    overflow: hidden;
   }
   .philosophy-text {
-    margin-bottom: 2rem;
-    font-size: 1.2rem;
+    font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+    line-height: 1.45;
+    max-width: 580px;
+    margin-bottom: clamp(32px, 4vh, 48px);
     text-align: center;
-    max-width: 320px;
-    width: 90%;
+    width: 100%;
   }
   .philosophy-image {
-    max-width: 90%;
+    width: min(90%, 820px);
     height: auto;
+    display: block;
+    margin: 0 auto;
   }
 
+}
+
+/* ---------------------------------------------------- */
+/* Tablet Specific Overrides (768px - 1050px)         */
+/* ---------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1050px) {
+  /* Restore 3-column grid for Experience */
+  .experience-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2.5vw, 28px);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .experience-card {
+    width: auto;
+    min-height: 480px;
+  }
+  
+  /* Independence of About Section */
+  .about-section {
+    min-height: 70vh;
+  }
+  .about-text-container {
+    padding: clamp(60px, 8vh, 100px) 40px;
+  }
+  .about-text-container h3 {
+    font-size: clamp(1.4rem, 2vw, 1.8rem);
+  }
+  .about-list {
+    gap: 24px;
+  }
+  .about-list li {
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    line-height: 1.6;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* Mobile ONLY (< 768px)                              */
+/* ---------------------------------------------------- */
+@media (max-width: 767px) {
   /* 3. About Section (Stack) */
   .about-section {
     flex-direction: column;
@@ -735,19 +785,27 @@ textarea.minimal-input {
   }
   .about-image-container {
     height: auto;
-    padding: 2rem 20px 0 20px;
+    padding: 0;
+  }
+  .about-image {
+    width: 100%;
+    height: auto;
   }
   .about-text-container {
-    padding: 3rem 20px;
+    padding: 4rem 30px;
     background-color: var(--color-about);
     width: 100%;
   }
   .about-text-container h3 {
     text-align: center;
     margin-bottom: 2rem;
+    font-size: 1.1rem;
   }
   .about-list {
     gap: 16px;
+  }
+  .about-list li {
+    font-size: 0.95rem;
   }
 
   /* 4. Experience Section (Swipe Slider) */
@@ -771,6 +829,10 @@ textarea.minimal-input {
     color: var(--color-text);
     opacity: 0.8;
   }
+  .pricing-info {
+    padding: 0 1.5rem;
+    margin-top: 1.5rem;
+  }
   .experience-cards-container {
     display: flex;
     flex-wrap: nowrap;
@@ -778,7 +840,7 @@ textarea.minimal-input {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    gap: 16px;
+    gap: 20px;
     padding: 0 20px 2rem 20px;
     scrollbar-width: none; /* Firefox */
   }
@@ -786,10 +848,53 @@ textarea.minimal-input {
     display: none; /* Chrome/Safari */
   }
   .experience-card {
-    flex: 0 0 85%;
+    flex: 0 0 calc(100vw - 40px);
     scroll-snap-align: center;
     min-width: unset;
     margin: 0;
+    padding: 2rem 1.5rem;
+  }
+  .card-img {
+    width: 100px;
+    margin: 0 auto 1.5rem auto;
+  }
+  .experience-card p, .card-list li {
+    font-size: 0.95rem;
+  }
+
+  /* 5. Gallery Mobile Styles */
+  .gallery-carousel-wrapper {
+    padding: 0;
+  }
+  .gallery-page {
+    padding: 2rem 1rem; /* Reduced from 8rem bottom padding */
+    min-height: auto;
+  }
+  .carousel-btn {
+    display: none; /* Ocultamos las flechas en móvil para usar swipe */
+  }
+  .gallery-carousel {
+    gap: 1.5rem;
+    padding: 1rem 20px;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+  }
+  .gallery-item {
+    flex: 0 0 calc(100vw - 40px);
+    max-width: unset;
+    scroll-snap-align: center;
+    width: 100%;
+  }
+  .gallery-item .img-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+    object-fit: contain;
   }
 }
 
