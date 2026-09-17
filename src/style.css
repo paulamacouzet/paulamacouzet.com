@@ -14,16 +14,24 @@
   box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  height: 100%; /* Fallback */
+  height: 100dvh;
+  overflow: hidden;
+  overscroll-behavior: none; /* Previene el rebote (bounce) en iOS/Mac */
+  touch-action: none; /* Previene cualquier intento de scroll táctil en móviles */
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--color-bg);
   color: var(--color-text);
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Prevent scroll on landing */
+  position: relative; /* Anchor for absolute footer */
 }
 
 /* Background image handling with blur effect and drifting clouds */
@@ -34,9 +42,9 @@ body {
   width: 100%;
   height: 100%;
   background-image: url('/images/Hero_image_main_page.png');
-  /* Make the background larger so we have room to pan */
-  background-size: 130%; 
-  background-position: 0% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   z-index: -2;
   
   /* Initial state: blurry and slightly scaled */
@@ -63,40 +71,39 @@ body {
 .content {
   text-align: center;
   z-index: 10;
-  padding: 0 2rem;
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 2rem; /* Separa el logo del subtítulo */
 }
 
 .main-logo {
-  max-width: 700px;
-  width: 90%;
+  width: min(85%, 520px);
   height: auto;
 }
 
 .subtitle-container {
-  text-align: center;
-  z-index: 10;
-  margin-top: 10vh; /* Space it down as in the screenshot */
-  width: 100%;
+  width: min(70%, 380px);
   display: flex;
   justify-content: center;
+  align-items: center;
+  z-index: 10;
 }
 
 .subtitle-img {
-  max-width: 450px;
-  width: 70%;
+  width: 100%;
   height: auto;
 }
 
 /* Bottom Links */
 .bottom-links {
   position: absolute;
-  bottom: 2.5rem;
-  right: 4rem;
+  bottom: clamp(1.5rem, 4vh, 3.5rem);
+  left: 0;
   display: flex;
-  gap: 2.5rem;
+  width: 100%;
+  justify-content: center;
+  gap: clamp(2rem, 5vw, 6rem);
   z-index: 10;
 }
 
@@ -166,5 +173,41 @@ body:not(.app-ready) .fade-in-dramatic {
     opacity: 0;
     /* Drift slightly upwards and rotate as it fades */
     transform: translate(-50%, -80%) scale(0.3) rotate(90deg);
+  }
+}
+
+/* ---------------------------------------------------- */
+/* Responsive Adjustments (Tablet & Mobile)             */
+/* ---------------------------------------------------- */
+
+/* iPad / Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .bottom-links {
+    /* Espaciado horizontal proporcional */
+    gap: clamp(2rem, 8vw, 4rem);
+  }
+}
+
+/* iPad Portrait & Mobile (Cambio de fondo a formato vertical) */
+@media (max-width: 1024px) and (orientation: portrait), (max-width: 768px) {
+  .background-image {
+    background-image: url('/images/Hero_image_main_page_mobile.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Mantiene las dos animaciones (focus + nubes) en móviles */
+    animation: bgFocus var(--transition-slow) forwards, driftClouds 120s linear infinite alternate;
+  }
+
+  .content {
+    margin-bottom: 1.5rem; /* Ajuste más sutil para móvil */
+  }
+
+  .subtitle-container {
+    width: min(50%, 280px); /* Ajustado a petición para ser un poco más grande */
+  }
+
+  .bottom-links {
+    bottom: max(1.5rem, env(safe-area-inset-bottom));
   }
 }

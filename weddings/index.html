@@ -18,19 +18,19 @@
     <!-- Adding Poppins as requested for the Weddings page -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css" />
+    <style>
+      /* Prevent scrolling while preloader is active */
+      body.loading { overflow: hidden; }
+    </style>
   </head>
-  <body>
-    <!-- Mobile Blocker -->
-    <div id="mobile-blocker">
-      <img src="/images/Logo_weddings.png" alt="Wedding Identity" class="mobile-logo-top">
-      <div class="mobile-message">
-        <p>Enhancing mobile experience...<br><br>Please view on desktop.<br>Back shortly.</p>
-      </div>
-      <img src="/images/logo_paulamacouzet.png" alt="Paula Macouzet" class="mobile-logo-bottom">
+  <body class="loading">
+    <!-- Preloader -->
+    <div id="preloader">
+      <img src="/images/logo_paulamacouzet.png" alt="Paula Macouzet Loading..." class="preloader-logo">
     </div>
 
-    <!-- Desktop Content -->
-    <div id="desktop-content">
+    <!-- Main Content -->
+    <div id="app-content">
       <header class="main-header">
         <div class="nav-left">
           <a href="/" class="brand-link">
@@ -59,19 +59,25 @@
       
       <main>
         <section class="hero-section">
-          <img src="/images/Hero_image_weddings_page2.png" alt="Destination Weddings Identity" class="hero-image">
+          <!-- Background image is controlled via CSS for cover/responsiveness -->
         </section>
 
         <section id="philosophy" class="philosophy-section">
           <div class="philosophy-text">
             <p>I design the visual identity of destination weddings,<br>where three things converge:</p>
           </div>
-          <img src="/images/Imagen_philosophy2.png" alt="Philosophy diagram" class="philosophy-image">
+          <picture>
+            <source media="(max-width: 768px)" srcset="/images/Imagen_philosophy_mobile.png">
+            <img src="/images/Imagen_philosophy2.png" alt="Philosophy diagram" class="philosophy-image">
+          </picture>
         </section>
 
         <section id="about" class="about-section">
           <div class="about-image-container">
-            <img src="/images/Imagen_presentacion_about2.png" alt="About Paula Macouzet" class="about-image">
+            <picture>
+              <source media="(max-width: 768px)" srcset="/images/Imagen_presentacion_about_mobile.png">
+              <img src="/images/Imagen_presentacion_about2.png" alt="About Paula Macouzet" class="about-image">
+            </picture>
           </div>
           <div class="about-text-container">
             <h3>We are a good match if:</h3>
@@ -148,9 +154,32 @@
       </footer>
     </div>
 
-    <!-- Scroll Animation Script for About Section -->
+    <!-- Preloader & Animations Script -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
+        // Preloader Logic
+        const preloader = document.getElementById('preloader');
+        const appContent = document.getElementById('app-content');
+        
+        // Wait for main hero image to load before fading
+        const bgImg = new Image();
+        const isMobile = window.innerWidth <= 768;
+        bgImg.src = isMobile ? '/images/Hero_image_weddings_page2_mobile.png' : '/images/Hero_image_weddings_page2.png';
+        
+        const removePreloader = () => {
+          preloader.classList.add('fade-out');
+          appContent.classList.add('fade-in-active');
+          document.body.classList.remove('loading');
+          
+          setTimeout(() => {
+            preloader.style.display = 'none';
+          }, 800); // Matches CSS transition time
+        };
+
+        bgImg.onload = removePreloader;
+        // Fallback in case of slow network
+        setTimeout(removePreloader, 4000);
+
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
