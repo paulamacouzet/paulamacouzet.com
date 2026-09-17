@@ -787,6 +787,43 @@ textarea.minimal-input {
     display: block;
     margin: 0 auto;
   }
+  
+  /* 3. About Section (Stacked for Tablet & Mobile) */
+  .about-section {
+    flex-direction: column;
+    min-height: auto;
+    background-color: var(--color-about); /* Pink background for entire section */
+  }
+  .about-image-container {
+    height: auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-bg); /* Beige background behind image so checkerboard isn't directly on pink if it doesn't fill */
+  }
+  .about-image {
+    width: 100%;
+    max-width: 800px; /* Center it nicely on big tablets */
+    height: auto;
+    object-fit: contain; /* Ensure text inside image isn't cropped */
+  }
+  .about-text-container {
+    padding: clamp(40px, 6vh, 80px) 30px;
+    width: 100%;
+    align-items: center; /* Center text visually */
+  }
+  .about-text-container h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  }
+  .about-list {
+    gap: 16px;
+    max-width: 600px; /* Keep bullets readable, not stretching across giant ipad screen */
+  }
+  .about-list li {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+  }
 
 }
 
@@ -808,60 +845,12 @@ textarea.minimal-input {
     min-height: 480px;
   }
   
-  /* Independence of About Section */
-  .about-section {
-    min-height: 70vh;
-  }
-  .about-text-container {
-    padding: clamp(60px, 8vh, 100px) 40px;
-  }
-  .about-text-container h3 {
-    font-size: clamp(1.4rem, 2vw, 1.8rem);
-  }
-  .about-list {
-    gap: 24px;
-  }
-  .about-list li {
-    font-size: clamp(1rem, 1.3vw, 1.15rem);
-    line-height: 1.6;
-  }
 }
 
 /* ---------------------------------------------------- */
 /* Mobile ONLY (< 768px)                              */
 /* ---------------------------------------------------- */
 @media (max-width: 767px) {
-  /* 3. About Section (Stack) */
-  .about-section {
-    flex-direction: column;
-    min-height: auto;
-    background-color: var(--color-bg);
-  }
-  .about-image-container {
-    height: auto;
-    padding: 0;
-  }
-  .about-image {
-    width: 100%;
-    height: auto;
-  }
-  .about-text-container {
-    padding: 4rem 30px;
-    background-color: var(--color-about);
-    width: 100%;
-  }
-  .about-text-container h3 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-  }
-  .about-list {
-    gap: 16px;
-  }
-  .about-list li {
-    font-size: 0.95rem;
-  }
-
   /* 4. Experience Section (Swipe Slider) */
   .experience-section {
     padding: 4rem 0 6rem 0;
