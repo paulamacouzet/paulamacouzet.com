@@ -49,17 +49,6 @@
     </style>
   </head>
   <body>
-    <!-- Mobile Blocker -->
-    <div id="mobile-blocker">
-      <img src="/images/Logo_weddings.png" alt="Wedding Identity" class="mobile-logo-top">
-      <div class="mobile-message">
-        <p>Enhancing mobile experience...<br><br>Please view on desktop.<br>Back shortly.</p>
-      </div>
-      <img src="/images/logo_paulamacouzet.png" alt="Paula Macouzet" class="mobile-logo-bottom">
-    </div>
-
-    <!-- Desktop Content -->
-    <div id="desktop-content">
       <header class="main-header">
         <div class="nav-left">
           <a href="/" class="brand-link">
@@ -79,6 +68,26 @@
         
         <div class="nav-right">
           <nav class="nav-links">
+            <a href="/weddings/#experience">experience</a>
+            <a href="/weddings/gallery/">selected works</a>
+            <a href="/weddings/inquire/">inquire</a>
+          </nav>
+        </div>
+        
+        <!-- Mobile Nav Toggle (Hidden on Desktop) -->
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Menu">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
+            <line x1="3" y1="12" x2="21" y2="12" class="line-middle"></line>
+            <line x1="3" y1="6" x2="21" y2="6" class="line-top"></line>
+            <line x1="3" y1="18" x2="21" y2="18" class="line-bottom"></line>
+          </svg>
+        </button>
+        
+        <!-- Fullscreen Mobile Menu Overlay -->
+        <div id="mobile-menu" class="mobile-menu-overlay">
+          <nav class="mobile-nav-links">
+            <a href="/weddings/#about">about</a>
+            <a href="/weddings/#philosophy">philosophy</a>
             <a href="/weddings/#experience">experience</a>
             <a href="/weddings/gallery/">selected works</a>
             <a href="/weddings/inquire/">inquire</a>
@@ -134,6 +143,33 @@
           <p class="copyright">&copy; 2026 Paula Macouzet. All rights reserved.</p>
         </div>
       </footer>
-    </div>
+    
+    <script>
+      // Hamburger Menu Logic
+      const navToggle = document.getElementById('mobile-nav-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (navToggle && mobileMenu) {
+        navToggle.addEventListener('click', () => {
+          navToggle.classList.toggle('is-active');
+          mobileMenu.classList.toggle('is-open');
+          if (mobileMenu.classList.contains('is-open')) {
+            document.body.classList.add('menu-open');
+          } else {
+            document.body.classList.remove('menu-open');
+          }
+        });
+        
+        // Close menu when a link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            navToggle.classList.remove('is-active');
+            mobileMenu.classList.remove('is-open');
+            document.body.classList.remove('menu-open');
+          });
+        });
+      }
+    </script>
   </body>
 </html>

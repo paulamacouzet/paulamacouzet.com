@@ -26,7 +26,12 @@
   <body class="loading">
     <!-- Preloader -->
     <div id="preloader">
-      <img src="/images/logo_paulamacouzet.png" alt="Paula Macouzet Loading..." class="preloader-logo">
+      <div class="preloader-phase preloader-phase1">
+        <img src="/images/logo_paulamacouzet.png" alt="Paula Macouzet Loading..." class="preloader-logo-typing">
+      </div>
+      <div class="preloader-phase preloader-phase2">
+        <img src="/images/Logo_weddings.png" alt="Weddings Loading..." class="preloader-logo-weddings">
+      </div>
     </div>
 
     <!-- Main Content -->
@@ -55,6 +60,26 @@
             <a href="/weddings/inquire/">inquire</a>
           </nav>
         </div>
+        
+        <!-- Mobile Nav Toggle (Hidden on Desktop) -->
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Menu">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
+            <line x1="3" y1="12" x2="21" y2="12" class="line-middle"></line>
+            <line x1="3" y1="6" x2="21" y2="6" class="line-top"></line>
+            <line x1="3" y1="18" x2="21" y2="18" class="line-bottom"></line>
+          </svg>
+        </button>
+        
+        <!-- Fullscreen Mobile Menu Overlay -->
+        <div id="mobile-menu" class="mobile-menu-overlay">
+          <nav class="mobile-nav-links">
+            <a href="/weddings/#about">about</a>
+            <a href="/weddings/#philosophy">philosophy</a>
+            <a href="/weddings/#experience">experience</a>
+            <a href="/weddings/gallery/">selected works</a>
+            <a href="/weddings/inquire/">inquire</a>
+          </nav>
+        </div>
       </header>
       
       <main>
@@ -68,7 +93,7 @@
           </div>
           <picture>
             <source media="(max-width: 768px)" srcset="/images/Imagen_philosophy_mobile.png">
-            <img src="/images/Imagen_philosophy2.png" alt="Philosophy diagram" class="philosophy-image">
+            <img src="/images/Imagen_philosophy3.png" alt="Philosophy diagram" class="philosophy-image">
           </picture>
         </section>
 
@@ -76,7 +101,7 @@
           <div class="about-image-container">
             <picture>
               <source media="(max-width: 768px)" srcset="/images/Imagen_presentacion_about_mobile.png">
-              <img src="/images/Imagen_presentacion_about2.png" alt="About Paula Macouzet" class="about-image">
+              <img src="/images/Imagen_presentacion_about3.png" alt="About Paula Macouzet" class="about-image">
             </picture>
           </div>
           <div class="about-text-container">
@@ -105,6 +130,7 @@
         <section id="experience" class="experience-section">
           <div class="experience-header">
             <img src="/images/Title_the_Experience.png" alt="The Experience" class="experience-title-img">
+            <p class="mobile-swipe-hint">Swipe gently to explore each step &rarr;</p>
           </div>
           <div class="experience-cards-container">
             <!-- Card 1 -->
@@ -159,26 +185,95 @@
       document.addEventListener('DOMContentLoaded', () => {
         // Preloader Logic
         const preloader = document.getElementById('preloader');
+        const phase1 = document.querySelector('.preloader-phase1');
+        const phase2 = document.querySelector('.preloader-phase2');
         const appContent = document.getElementById('app-content');
         
-        // Wait for main hero image to load before fading
+        // Wait for main hero image to load in background
         const bgImg = new Image();
         const isMobile = window.innerWidth <= 768;
         bgImg.src = isMobile ? '/images/Hero_image_weddings_page2_mobile.png' : '/images/Hero_image_weddings_page2.png';
         
-        const removePreloader = () => {
-          preloader.classList.add('fade-out');
+        let imgLoaded = false;
+        bgImg.onload = () => { imgLoaded = true; };
+        setTimeout(() => { imgLoaded = true; }, 3000); // Fail-safe
+        
+        // Check referrer to skip cinematic if coming from gallery or inquire
+        let skipPreloader = false;
+        try {
+          if (document.referrer) {
+            const refUrl = new URL(document.referrer);
+            if (refUrl.pathname.includes('/weddings/gallery') || refUrl.pathname.includes('/weddings/inquire')) {
+              skipPreloader = true;
+            }
+          }
+        } catch (e) {}
+
+        if (skipPreloader) {
+          preloader.style.display = 'none';
           appContent.classList.add('fade-in-active');
           document.body.classList.remove('loading');
-          
+        } else {
+          // Cinematic Sequence
+          // Phase 1 (typing reveal) starts immediately via CSS animation (2s).
           setTimeout(() => {
-            preloader.style.display = 'none';
-          }, 800); // Matches CSS transition time
-        };
-
-        bgImg.onload = removePreloader;
-        // Fallback in case of slow network
-        setTimeout(removePreloader, 4000);
+            // Fade out Phase 1
+            phase1.classList.add('fade-out');
+            
+            setTimeout(() => {
+              // Fade in Phase 2
+              phase2.classList.add('fade-in');
+              
+              // Wait for phase 2 and ensure image is loaded
+              const finishPreloader = () => {
+                if (!imgLoaded) {
+                  setTimeout(finishPreloader, 100);
+                  return;
+                }
+                // Fade out phase 2 & entire preloader
+                phase2.classList.remove('fade-in');
+                phase2.classList.add('fade-out');
+                preloader.classList.add('fade-out');
+                
+                // Dramatically fade in main app
+                appContent.classList.add('fade-in-active');
+                document.body.classList.remove('loading');
+                
+                setTimeout(() => {
+                  preloader.style.display = 'none';
+                }, 800);
+              };
+              
+              setTimeout(finishPreloader, 1500); // Hold Phase 2 for 1.5s
+            }, 800); // Wait for Phase 1 fade out to complete
+          }, 2500); // Wait 2.5s for Phase 1 reveal
+        }
+        
+        // Hamburger Menu Logic
+        const navToggle = document.getElementById('mobile-nav-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (navToggle && mobileMenu) {
+          navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('is-active');
+            mobileMenu.classList.toggle('is-open');
+            if (mobileMenu.classList.contains('is-open')) {
+              document.body.classList.add('menu-open');
+            } else {
+              document.body.classList.remove('menu-open');
+            }
+          });
+          
+          // Close menu when a link is clicked
+          const mobileLinks = mobileMenu.querySelectorAll('a');
+          mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+              navToggle.classList.remove('is-active');
+              mobileMenu.classList.remove('is-open');
+              document.body.classList.remove('menu-open');
+            });
+          });
+        }
 
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
