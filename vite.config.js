@@ -8,6 +8,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         weddings: resolve(__dirname, 'weddings/index.html'),
         gallery: resolve(__dirname, 'weddings/gallery/index.html'),
+        websites: resolve(__dirname, 'weddings/websites/index.html'),
         inquire: resolve(__dirname, 'weddings/inquire/index.html')
       }
     }
