@@ -191,7 +191,7 @@ body:not(.app-ready) .fade-in-dramatic {
 /* iPad Portrait & Mobile (Cambio de fondo a formato vertical) */
 @media (max-width: 1024px) and (orientation: portrait), (max-width: 768px) {
   .background-image {
-    background-image: url('/images/Hero_image_main_page_mobile.png');
+    background-image: url('/images/Hero_image_main_page_mobile.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

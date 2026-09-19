@@ -174,7 +174,7 @@ body {
 .hero-section {
   width: 100%;
   height: calc(100vh - 100px); /* Adjust to compensate header */
-  background-image: url('/images/Hero_image_weddings_page3.png'), url('/images/Texture_background.png');
+  background-image: url('/images/Hero_image_weddings_page3.jpg'), url('/images/Texture_background.png');
   background-size: cover, cover;
   background-position: center center, center center;
   background-repeat: no-repeat, no-repeat;
@@ -768,7 +768,7 @@ textarea.minimal-input {
   .hero-section {
     min-height: unset;
     height: 150.09vw; /* EXACT aspect ratio of the 2160x3242 image */
-    background-image: url('/images/Hero_image_main_page_mobile2.png'), url('/images/Texture_background.png');
+    background-image: url('/images/Hero_image_main_page_mobile2.jpg'), url('/images/Texture_background.png');
     background-size: 100% auto, cover;
     background-position: center center, center center;
     background-repeat: no-repeat, no-repeat;
