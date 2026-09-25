@@ -4,298 +4,375 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/images/Logo_weddings.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weddings | Paula Macouzet</title>
+    <title>Paula Macouzet | Fine Art Visual Identity & Bespoke Websites</title>
     
-    <!-- Open Graph Meta Tags for Social/WhatsApp Sharing -->
-    <meta property="og:title" content="Weddings | Paula Macouzet" />
-    <meta property="og:description" content="I design the visual identity of destination weddings, where three things converge: art, craft, and the savoir-faire of the hands behind each piece." />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Paula Macouzet | Fine Art Visual Identity & Bespoke Websites" />
+    <meta property="og:description" content="Bespoke visual identity and custom digital spaces for destination weddings. Rooted in roots, human story, and the culture of the land." />
     <meta property="og:image" content="https://paulamacouzet.com/images/Hero_image_weddings_page.png" />
     <meta property="og:url" content="https://paulamacouzet.com/weddings/" />
     <meta property="og:type" content="website" />
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Adding Poppins as requested for the Weddings page -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css" />
-    <style>
-      /* Prevent scrolling while preloader is active */
-      body.loading { overflow: hidden; }
-    </style>
   </head>
-  <body class="loading">
-    <!-- Preloader -->
-    <div id="preloader">
-      <div class="preloader-phase preloader-phase1">
-        <img src="/images/logo_paulamacouzet.png" alt="Paula Macouzet Loading..." class="preloader-logo-typing">
+  <body class="home-body">
+    <!-- Header -->
+    <header class="main-header">
+      <div class="nav-left">
+        <a href="/" class="brand-link">
+          <img src="/images/logo_paulamacouzet.png" alt="Paula Macouzet" class="brand-logo">
+        </a>
+        <nav class="nav-links">
+          <a href="#philosophy">philosophy</a>
+          <a href="#fine-art">fine art</a>
+        </nav>
       </div>
-      <div class="preloader-phase preloader-phase2">
-        <img src="/images/Logo_weddings.png" alt="Weddings Loading..." class="preloader-logo-weddings">
-      </div>
-    </div>
-
-    <!-- Main Content -->
-    <div id="app-content">
-      <header class="main-header">
-        <div class="nav-left">
-          <a href="/" class="brand-link">
-            <img src="/images/logo_paulamacouzet.png" alt="Paula Macouzet" class="brand-logo">
-          </a>
-          <nav class="nav-links">
-            <a href="/weddings/#about">about</a>
-            <a href="/weddings/#philosophy">philosophy</a>
-          </nav>
-        </div>
-        
-        <div class="nav-center">
-          <a href="/weddings/" class="center-logo-link">
-            <img src="/images/Logo_weddings.png" alt="Wedding Identity Logo" class="center-logo">
-          </a>
-        </div>
-        
-        <div class="nav-right">
-          <nav class="nav-links">
-            <a href="/weddings/stories/">stories</a>
-            <a href="/weddings/collections/">collections</a>
-            <a href="/weddings/for-planners/">for planners</a>
-            <a href="/weddings/inquire/">inquire</a>
-          </nav>
-        </div>
-        
-        <!-- Mobile Nav Toggle (Hidden on Desktop) -->
-        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Menu">
-          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
-            <line x1="3" y1="12" x2="21" y2="12" class="line-middle"></line>
-            <line x1="3" y1="6" x2="21" y2="6" class="line-top"></line>
-            <line x1="3" y1="18" x2="21" y2="18" class="line-bottom"></line>
-          </svg>
-        </button>
-        
-        <!-- Fullscreen Mobile Menu Overlay -->
-        <div id="mobile-menu" class="mobile-menu-overlay">
-          <nav class="mobile-nav-links">
-            <a href="/weddings/#about">about</a>
-            <a href="/weddings/#philosophy">philosophy</a>
-            <a href="/weddings/stories/">stories</a>
-            <a href="/weddings/collections/">collections</a>
-            <a href="/weddings/for-planners/">for planners</a>
-            <a href="/weddings/inquire/">inquire</a>
-          </nav>
-        </div>
-      </header>
       
-      <main>
-        <section class="hero-section">
-          <!-- Background image is controlled via CSS for cover/responsiveness -->
-        </section>
+      <div class="nav-center">
+        <a href="/weddings/" class="center-logo-link">
+          <img src="/images/Logo_weddings.png" alt="Wedding Identity Logo" class="center-logo">
+        </a>
+      </div>
+      
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="/weddings/stories/">stories</a>
+          <a href="/weddings/collections/">collections</a>
+          <a href="/weddings/objects/">art & objects</a>
+          <a href="/weddings/for-planners/">for planners</a>
+          <a href="/weddings/inquire/">inquire</a>
+        </nav>
+      </div>
+      
+      <!-- Mobile Nav Toggle -->
+      <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
+          <line x1="3" y1="12" x2="21" y2="12" class="line-middle"></line>
+          <line x1="3" y1="6" x2="21" y2="6" class="line-top"></line>
+          <line x1="3" y1="18" x2="21" y2="18" class="line-bottom"></line>
+        </svg>
+      </button>
+      
+      <!-- Fullscreen Mobile Menu Overlay -->
+      <div id="mobile-menu" class="mobile-menu-overlay">
+        <nav class="mobile-nav-links">
+          <a href="#philosophy">philosophy</a>
+          <a href="#fine-art">fine art</a>
+          <a href="/weddings/stories/">stories</a>
+          <a href="/weddings/collections/">collections</a>
+          <a href="/weddings/objects/">art & objects</a>
+          <a href="/weddings/for-planners/">for planners</a>
+          <a href="/weddings/inquire/">inquire</a>
+        </nav>
+      </div>
+    </header>
 
-        <section id="philosophy" class="philosophy-section">
-          <div class="philosophy-text">
-            <p>I design the visual identity of destination weddings,<br>where three things converge:</p>
-          </div>
-          <picture>
-            <source media="(max-width: 768px)" srcset="/images/Imagen_philosophy_mobile.png">
-            <img src="/images/Imagen_philosophy3.png" alt="Philosophy diagram" class="philosophy-image">
-          </picture>
-        </section>
-
-        <section id="about" class="about-section">
-          <div class="about-image-container">
-            <picture>
-              <source media="(max-width: 768px)" srcset="/images/Imagen_presentacion_about_mobile.jpg">
-              <img src="/images/Imagen_presentacion_about3.jpg" alt="About Paula Macouzet" class="about-image">
-            </picture>
-          </div>
-          <div class="about-text-container">
-            <h3>We are a good match if:</h3>
-            <ul class="about-list">
-              <li>
-                <span class="diamond">⟡</span> 
-                <span>You appreciate art, craft, and the <i>savoir-faire</i> of the hands behind each piece.</span>
-              </li>
-              <li>
-                <span class="diamond">⟡</span> 
-                <span>You see a wedding as two lives converging, and you want a thoughtful touch to blend families, places, or cultures seamlessly.</span>
-              </li>
-              <li>
-                <span class="diamond">⟡</span> 
-                <span>You believe a marriage is fertile ground for beautiful things to grow, and you want to plant something with intention.</span>
-              </li>
-              <li>
-                <span class="diamond">⟡</span> 
-                <span>You want a celebration that reflects your true identity, rooted in timeless elegance rather than fleeting trends.</span>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="experience" class="experience-section">
-          <div class="experience-header">
-            <img src="/images/Title_the_Experience.png" alt="The Experience" class="experience-title-img">
-            <p class="mobile-swipe-hint">Swipe gently to explore each step &rarr;</p>
-          </div>
-          <div class="experience-cards-container">
-            <!-- Card 1 -->
-            <div class="experience-card">
-              <img src="/images/Swan.png" alt="Swan" class="card-img">
-              <p><strong>One.</strong> Your story.</p>
-              <p>A 45 minute session dedicated entirely to understanding you as a couple. You bring your moodboard, I bring the questions.</p>
-              <p>Afterwards you receive a short form to choose the sections of your website and fill in the wording.</p>
-            </div>
-            
-            <!-- Card 2 -->
-            <div class="experience-card">
-              <img src="/images/Corazones.png" alt="Hearts" class="card-img">
-              <p><strong>Two.</strong> The identity.</p>
-              <p>On a 30 minute call, you see your identity for the first time, drawn from your story. Includes:</p>
-              <ul class="card-list">
-                <li>Monogram</li>
-                <li>Palette</li>
-                <li>Typographic system</li>
-                <li>Suite of original illustrations</li>
-                <li>Plus the first look at your website and your save the date</li>
-              </ul>
-              <p class="italic-text">One round of changes on each</p>
-            </div>
-            
-            <!-- Card 3 -->
-            <div class="experience-card">
-              <img src="/images/lovebird.png" alt="Lovebird" class="card-img">
-              <p><strong>Three.</strong> Ready to send.</p>
-              <p>Your save the date, set up in your platform. Your website, live on your own domain, with a custom RSVP built around the questions you need to ask. And a brand guide, so your planner and her team work from the same line</p>
-            </div>
-          </div>
-          <div class="pricing-info">
-            <p style="font-size: 1.15rem; margin-bottom: 0.8rem; color: #2c2825;">Curated Collections from $1,600 to $3,800 USD</p>
-            <p style="font-size: 0.9rem; color: #797166; margin-bottom: 1.5rem;">Featuring our Signature Identity Suite at $2,600 USD</p>
-            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-              <a href="/weddings/collections/" class="btn-solid-dark" style="display: inline-block;">View Collections & Pricing &rarr;</a>
-              <a href="/weddings/stories/" class="btn-outline-gold" style="display: inline-block;">Explore Stories Archive</a>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer class="main-footer">
-        <div class="footer-content">
-          <a href="/">
-            <img src="/images/logo_paulamacouzet.png" alt="Paula Macouzet" class="footer-logo">
-          </a>
-          <p class="copyright">&copy; 2026 Paula Macouzet. All rights reserved.</p>
+    <main class="home-main-container">
+      
+      <!-- 1. HERO SECTION -->
+      <section class="home-hero-editorial">
+        <span class="hero-eyebrow">ATELIER PAULA MACOUZET • 2026/2027 COMMISSIONS</span>
+        <h1 class="home-hero-headline">Fine Art Visual Identity &<br>Bespoke Websites for Destination Weddings.</h1>
+        <p class="home-hero-sub">
+          Where roots, human narrative, and the soul of the land converge into unrepeatable wedding heirlooms.
+        </p>
+        <div class="home-hero-actions">
+          <a href="/weddings/stories/" class="btn-solid-dark">Explore Selected Works &rarr;</a>
+          <a href="/weddings/collections/" class="btn-outline-gold">View Collections</a>
         </div>
-      </footer>
-    </div>
+        
+        <!-- Hero Editorial Cover Media Wireframe Slot -->
+        <div class="home-hero-media-wrapper">
+          <div class="wireframe-media-box" style="aspect-ratio: 16/9; max-width: 1040px; margin: 0 auto;">
+            <span class="wf-code">HERO-01</span>
+            <span class="wf-title">Editorial Wedding Cover Media</span>
+            <span class="wf-dim">16:9 Ratio • High-res Destination Wedding Landscape / Portrait</span>
+          </div>
+        </div>
+      </section>
 
-    <!-- Preloader & Animations Script -->
+      <!-- 2. THE PHILOSOPHY: THREE LIVING THREADS -->
+      <section id="philosophy" class="home-philosophy-section">
+        <div class="section-badge-wrap">
+          <span class="section-badge">THE STUDIO PHILOSOPHY</span>
+        </div>
+        <h2 class="home-section-title">Three Living Threads.<br>One Unrepeatable Intersection.</h2>
+        <p class="home-section-lead">
+          A destination wedding is not merely an event; it is an unrepeatable human intersection that exists only once in time. It is the deliberate convergence of three threads:
+        </p>
+
+        <div class="threads-grid">
+          <div class="thread-card">
+            <span class="thread-num">01</span>
+            <h3>Your Roots</h3>
+            <p>Your family heritage, traditions, the places you have inhabited, and the languages you speak—everything that shaped who you are before you met.</p>
+          </div>
+          <div class="thread-card">
+            <span class="thread-num">02</span>
+            <h3>Your Shared Story</h3>
+            <p>The inside jokes, quiet rituals, aesthetic memories, and emotional foundation built over the years of your partnership.</p>
+          </div>
+          <div class="thread-card">
+            <span class="thread-num">03</span>
+            <h3>The Soul of the Land</h3>
+            <p>Honoring the soil, native traditions, culinary heritage, and human craft of the destination holding your celebration with reverence, rather than fleeting trends.</p>
+          </div>
+        </div>
+
+        <!-- Botanical Entwined Metaphor Slot -->
+        <div class="botanical-metaphor-box">
+          <div class="wireframe-media-box" style="aspect-ratio: 16/7; max-width: 960px; margin: 0 auto;">
+            <span class="wf-code">ART-BOTANICAL</span>
+            <span class="wf-title">Interactive Botanical Metaphor Artwork</span>
+            <span class="wf-dim">Three living vines entwining into a central blooming crest</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. WHAT I MEAN BY FINE ART -->
+      <section id="fine-art" class="home-fine-art-section">
+        <div class="fine-art-inner-grid">
+          <div class="fine-art-left">
+            <span class="section-badge">THE STUDIO CRAFT</span>
+            <h2>What I Mean by Fine Art</h2>
+            <p class="fine-art-lead">
+              A wedding website should never feel sterile, algorithmic, or like an impersonal corporate template.
+            </p>
+            <p class="fine-art-body">
+              To me, <strong>Fine Art</strong> means honoring the human hand behind every single touchpoint. It is the belief that your guests should feel the warmth, depth, and poetry of true craftsmanship long before they pack their bags for destination.
+            </p>
+          </div>
+          <div class="fine-art-right">
+            <div class="craft-points-list">
+              <div class="craft-point">
+                <span class="diamond-gold">⟡</span>
+                <div>
+                  <h4>Original Drawing & Watercolor Washes</h4>
+                  <p>Hand-rendered pigments, organic paper grain, and fluid lines created specifically for your celebration.</p>
+                </div>
+              </div>
+              <div class="craft-point">
+                <span class="diamond-gold">⟡</span>
+                <div>
+                  <h4>Native Botanical Linework & Architecture</h4>
+                  <p>Authentic architectural facades and native flora drawn with botanical reverence.</p>
+                </div>
+              </div>
+              <div class="craft-point">
+                <span class="diamond-gold">⟡</span>
+                <div>
+                  <h4>Curated Archival Typography</h4>
+                  <p>Editorial font pairings selected with timeless typographic discipline.</p>
+                </div>
+              </div>
+              <div class="craft-point">
+                <span class="diamond-gold">⟡</span>
+                <div>
+                  <h4>Tactile Paper Textures Woven into Code</h4>
+                  <p>Merging fine art illustration with modern, lightning-fast web engineering.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. WE ARE A GOOD MATCH IF... -->
+      <section class="home-match-section">
+        <div class="match-inner">
+          <h2 class="home-section-title">We Are a Good Match If...</h2>
+          <div class="match-list">
+            <div class="match-item">
+              <span class="diamond-gold">⟡</span>
+              <p><strong>You appreciate art, craft, and the human hand behind each piece.</strong> You place value on original drawing and tactile refinement over generic, mass-produced digital templates.</p>
+            </div>
+            <div class="match-item">
+              <span class="diamond-gold">⟡</span>
+              <p><strong>You see your wedding as two worlds converging.</strong> You want a deliberate, thoughtful aesthetic touch to seamlessly harmonize families, cultures, backgrounds, or languages.</p>
+            </div>
+            <div class="match-item">
+              <span class="diamond-gold">⟡</span>
+              <p><strong>You believe celebration should feel like you, not like this year’s algorithm.</strong> You desire an identity rooted in quiet luxury and enduring poetry, rather than fleeting trends.</p>
+            </div>
+            <div class="match-item">
+              <span class="diamond-gold">⟡</span>
+              <p><strong>You want your guests' experience to begin the moment they receive their first touchpoint.</strong> You understand that anticipation is an art form, and that a curated digital experience sets the tone long before arrival.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. THE THREE-STEP EXPERIENCE -->
+      <section class="home-experience-section">
+        <div class="section-badge-wrap">
+          <span class="section-badge">THE COLLABORATIVE JOURNEY</span>
+        </div>
+        <h2 class="home-section-title">The Three-Step Experience</h2>
+        
+        <div class="experience-steps-grid">
+          <div class="step-card">
+            <span class="step-num">01</span>
+            <h3>Your Story</h3>
+            <p>A 45-minute creative discovery session dedicated entirely to understanding your roots, aesthetics, and venue inspirations. You bring your moodboard, I bring the questions.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">02</span>
+            <h3>The Reveal</h3>
+            <p>On a 30-minute visual reveal call, you experience your custom monogram, color palette, original illustration suite, and the interactive first look at your private website.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">03</span>
+            <h3>Ready to Celebrate</h3>
+            <p>Your website goes live on your custom domain with conditional RSVP logic, while your planner receives the master Brand Guide to align florists and local print houses.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. SELECTED WORKS PREVIEW (STORIES ARCHIVE TEASER) -->
+      <section class="home-stories-teaser">
+        <div class="teaser-header">
+          <div>
+            <span class="section-badge">SELECTED ARCHIVE</span>
+            <h2>Stories of Convergence</h2>
+          </div>
+          <a href="/weddings/stories/" class="btn-outline-gold">View Complete Archive &rarr;</a>
+        </div>
+
+        <div class="teaser-cards-grid">
+          <div class="mini-project-card">
+            <div class="mini-card-media wireframe-media-box" style="aspect-ratio: 3/4;">
+              <span class="wf-code">IMG-01</span>
+              <span class="wf-title">Jonny & Esteban</span>
+            </div>
+            <div class="mini-card-info">
+              <span class="mini-loc">SAN MIGUEL DE ALLENDE, MEXICO</span>
+              <h4>Jonny & Esteban</h4>
+              <p>Where bold colonial stone meets contemporary organic minimalism—celebrating deep ancestral heritage through terracotta tones.</p>
+            </div>
+          </div>
+
+          <div class="mini-project-card">
+            <div class="mini-card-media wireframe-media-box" style="aspect-ratio: 3/4;">
+              <span class="wf-code">IMG-02</span>
+              <span class="wf-title">Priya & Rohan</span>
+            </div>
+            <div class="mini-card-info">
+              <span class="mini-loc">LONDON & UDAIPUR, INDIA</span>
+              <h4>Priya & Rohan</h4>
+              <p>Bringing two continents together: intricate Indian palace arches translated through refined European editorial typography.</p>
+            </div>
+          </div>
+
+          <div class="mini-project-card">
+            <div class="mini-card-media wireframe-media-box" style="aspect-ratio: 3/4;">
+              <span class="wf-code">IMG-03</span>
+              <span class="wf-title">Chloe & Liam</span>
+            </div>
+            <div class="mini-card-info">
+              <span class="mini-loc">LAKE COMO, ITALY</span>
+              <h4>Chloe & Liam</h4>
+              <p>A quiet luxury destination wedding celebrating deep coastal pines and Italian lakeside villa stone with timeless poise.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. COLLECTIONS TEASER -->
+      <section class="home-collections-teaser">
+        <span class="section-badge">THE COLLECTIONS</span>
+        <h2 class="home-section-title">Crafted for Intention</h2>
+        <p class="collections-teaser-lead">
+          Three carefully considered collections tailored to your celebration’s physical and digital scope.
+        </p>
+
+        <div class="home-collections-grid">
+          <div class="home-coll-card">
+            <span class="coll-tier">COLLECTION I</span>
+            <h3>The Editorial Digital Suite</h3>
+            <p class="coll-price">$1,500 USD</p>
+            <p class="coll-desc">Template-free bespoke website, custom multi-event RSVP, typographic identity, and digital Save the Date.</p>
+          </div>
+          <div class="home-coll-card featured-coll">
+            <span class="coll-ribbon">FLAGSHIP EXPERIENCE</span>
+            <span class="coll-tier">COLLECTION II</span>
+            <h3>The Signature Atelier</h3>
+            <p class="coll-price">$2,300 USD</p>
+            <p class="coll-desc">Full digital suite, bespoke hand-drawn illustration suite, custom crest, and the master Production Brand Guide for your planner.</p>
+          </div>
+          <div class="home-coll-card">
+            <span class="coll-tier">COLLECTION III</span>
+            <h3>The Full Atelier</h3>
+            <p class="coll-price">$3,400 USD</p>
+            <p class="coll-desc">From digital anticipation to the physical tablescape. Complete identity suite plus print-ready design of day-of paper goods & signage.</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="/weddings/collections/" class="btn-solid-dark">Explore Full Collections & Pricing &rarr;</a>
+        </div>
+      </section>
+
+      <!-- 8. ART, OBJECTS & THE MERCADITO SPOTLIGHT -->
+      <section class="home-objects-spotlight">
+        <div class="objects-spotlight-inner">
+          <div class="objects-spotlight-text">
+            <span class="section-badge">HEIRLOOMS BEYOND THE SCREEN</span>
+            <h2>Art & The Curated Welcome Market</h2>
+            <p>
+              Drawing from Mexico’s most celebrated craft heartlands and classical fine art traditions, we create physical treasures that honor your destination. From hand-painted keepsake tequila bottles to custom-branded artisanal welcome markets ("El Mercadito") for your welcome party.
+            </p>
+            <div style="margin-top: 2rem;">
+              <a href="/weddings/objects/" class="btn-solid-dark">Discover Art & Objects &rarr;</a>
+            </div>
+          </div>
+          <div class="objects-spotlight-visual">
+            <div class="wireframe-media-box" style="aspect-ratio: 4/3; width: 100%;">
+              <span class="wf-code">ART-MERCADITO</span>
+              <span class="wf-title">Artisanal Gifting & Hand-Painted Keepsakes</span>
+              <span class="wf-dim">Curated Michoacán Craft & Fine Art Bottles</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. FINAL CALL TO ACTION -->
+      <section class="home-final-cta">
+        <span class="diamond-accent">⟡</span>
+        <h2>Begin Your Story</h2>
+        <p>I accept a strictly limited number of commissions each wedding season to guarantee intimate creative direction and uncompromising execution.</p>
+        <div class="final-cta-actions">
+          <a href="/weddings/inquire/" class="btn-solid-dark">Inquire for Your Date &rarr;</a>
+          <a href="/weddings/for-planners/" class="btn-outline-gold">For Wedding Planners</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="footer-content">
+        <a href="/">
+          <img src="/images/logo_paulamacouzet.png" alt="Paula Macouzet" class="footer-logo">
+        </a>
+        <p class="copyright">&copy; 2026 Paula Macouzet. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Mobile menu toggle script -->
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        // Preloader Logic
-        const preloader = document.getElementById('preloader');
-        const phase1 = document.querySelector('.preloader-phase1');
-        const phase2 = document.querySelector('.preloader-phase2');
-        const appContent = document.getElementById('app-content');
-        
-        // Wait for main hero image to load in background
-        const bgImg = new Image();
-        const isMobile = window.innerWidth <= 768;
-        bgImg.src = isMobile ? '/images/Hero_image_weddings_page2_mobile.jpg' : '/images/Hero_image_weddings_page2.png';
-        
-        let imgLoaded = false;
-        bgImg.onload = () => { imgLoaded = true; };
-        setTimeout(() => { imgLoaded = true; }, 3000); // Fail-safe
-        
-        // Check referrer to skip cinematic if coming from gallery or inquire
-        let skipPreloader = false;
-        try {
-          if (document.referrer) {
-            const refUrl = new URL(document.referrer);
-            if (refUrl.pathname.includes('/weddings/gallery') || refUrl.pathname.includes('/weddings/inquire')) {
-              skipPreloader = true;
-            }
-          }
-        } catch (e) {}
-
-        if (skipPreloader) {
-          preloader.style.display = 'none';
-          appContent.classList.add('fade-in-active');
-          document.body.classList.remove('loading');
-        } else {
-          // Cinematic Sequence
-          // Phase 1 (typing reveal) starts immediately via CSS animation (2s).
-          setTimeout(() => {
-            // Fade out Phase 1
-            phase1.classList.add('fade-out');
-            
-            setTimeout(() => {
-              // Fade in Phase 2
-              phase2.classList.add('fade-in');
-              
-              // Wait for phase 2 and ensure image is loaded
-              const finishPreloader = () => {
-                if (!imgLoaded) {
-                  setTimeout(finishPreloader, 100);
-                  return;
-                }
-                // Fade out phase 2 & entire preloader
-                phase2.classList.remove('fade-in');
-                phase2.classList.add('fade-out');
-                preloader.classList.add('fade-out');
-                
-                // Dramatically fade in main app
-                appContent.classList.add('fade-in-active');
-                document.body.classList.remove('loading');
-                
-                setTimeout(() => {
-                  preloader.style.display = 'none';
-                }, 800);
-              };
-              
-              setTimeout(finishPreloader, 1500); // Hold Phase 2 for 1.5s
-            }, 800); // Wait for Phase 1 fade out to complete
-          }, 2500); // Wait 2.5s for Phase 1 reveal
-        }
-        
-        // Hamburger Menu Logic
-        const navToggle = document.getElementById('mobile-nav-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (navToggle && mobileMenu) {
-          navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('is-active');
-            mobileMenu.classList.toggle('is-open');
-            if (mobileMenu.classList.contains('is-open')) {
-              document.body.classList.add('menu-open');
-            } else {
-              document.body.classList.remove('menu-open');
-            }
-          });
-          
-          // Close menu when a link is clicked
-          const mobileLinks = mobileMenu.querySelectorAll('a');
-          mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-              navToggle.classList.remove('is-active');
-              mobileMenu.classList.remove('is-open');
-              document.body.classList.remove('menu-open');
-            });
-          });
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.1 });
-        
-        const listItems = document.querySelectorAll('.about-list li');
-        listItems.forEach((li, index) => {
-          li.style.transitionDelay = `${index * 0.2}s`;
-          observer.observe(li);
+      const navToggle = document.getElementById('mobile-nav-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (navToggle && mobileMenu) {
+        navToggle.addEventListener('click', () => {
+          navToggle.classList.toggle('is-active');
+          mobileMenu.classList.toggle('is-open');
+          document.body.classList.toggle('menu-open');
         });
-      });
+      }
     </script>
   </body>
 </html>
