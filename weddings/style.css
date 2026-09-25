@@ -2813,5 +2813,155 @@ textarea.minimal-input {
   text-transform: uppercase;
 }
 
+/* Functional Simulator Tabs inside Device */
+.sim-tab-btn {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #8c8478;
+  cursor: pointer;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.25s ease;
+}
+.sim-tab-btn:hover {
+  color: #2b2825;
+}
+.sim-tab-btn.active {
+  color: #b89d74;
+  border-bottom-color: #b89d74;
+  font-weight: 500;
+}
+.sim-jump-rsvp {
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.sim-jump-rsvp:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+/* Art & Objects Page Styling */
+.objects-body {
+  background-color: #fcfbfa;
+  color: #2c2825;
+}
+.objects-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem 8rem;
+}
+.objects-hero {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 5rem;
+}
+.objects-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #2c2825;
+  margin: 1rem 0 1.5rem;
+}
+.objects-intro {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #6d665c;
+  font-weight: 300;
+}
+.objects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 6rem;
+}
+@media (max-width: 900px) {
+  .objects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.object-card {
+  background: #ffffff;
+  border: 1px solid rgba(184, 157, 116, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.object-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+}
+.object-card-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.object-badge {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #b89d74;
+  margin-bottom: 0.8rem;
+}
+.object-card-content h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.35rem;
+  color: #2c2825;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+.object-card-content p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #6d665c;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+.object-meta {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #2c2825;
+  font-weight: 500;
+  border-top: 1px solid #f0ebe4;
+  padding-top: 1rem;
+}
+.craft-heartlands-section {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background: #f7f3ee;
+  border-radius: 6px;
+  border: 1px solid rgba(184, 157, 116, 0.25);
+}
+.craft-heartlands-section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: #2c2825;
+  margin: 1rem 0;
+  font-weight: 400;
+}
+.craft-heartlands-section p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #6d665c;
+  margin-bottom: 2rem;
+}
+.craft-actions {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 
 

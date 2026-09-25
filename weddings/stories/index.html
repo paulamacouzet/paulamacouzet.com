@@ -41,6 +41,7 @@
         <nav class="nav-links">
           <a href="/weddings/stories/" class="active-link">stories</a>
           <a href="/weddings/collections/">collections</a>
+          <a href="/weddings/objects/">art & objects</a>
           <a href="/weddings/for-planners/">for planners</a>
           <a href="/weddings/inquire/">inquire</a>
         </nav>
@@ -62,6 +63,7 @@
           <a href="/weddings/#philosophy">philosophy</a>
           <a href="/weddings/stories/">stories</a>
           <a href="/weddings/collections/">collections</a>
+          <a href="/weddings/objects/">art & objects</a>
           <a href="/weddings/for-planners/">for planners</a>
           <a href="/weddings/inquire/">inquire</a>
         </nav>
@@ -71,13 +73,13 @@
     <main class="stories-main-container">
       <!-- Hero Section: Apple-like breathing room -->
       <section class="stories-hero">
-        <span class="hero-eyebrow">SELECTED WORKS & ARCHIVE • BLUEPRINT</span>
-        <h1 class="stories-title">Five Stories.<br>Five Intersections.</h1>
+        <span class="hero-eyebrow">SELECTED WORKS & ARCHIVAL COMMISSIONS</span>
+        <h1 class="stories-title">Stories of<br>Convergence.</h1>
         <p class="stories-intro">
-          Each celebration begins where three things converge: your roots, the story built between two souls, and the culture of the land holding your celebration. Tap any project card below to discover their narrative vision, and interact with the digital prototypes designed for their guests.
+          A curated archive of bespoke visual worlds and custom digital spaces crafted for destination weddings around the globe. Tap any story below to explore their vision and interact with the live prototypes designed for their guests.
         </p>
         <div class="archive-counter">
-          <span>05 COMMISSIONS AVAILABLE</span>
+          <span>A NOTE ON DISCRETION & PRIVACY: SELECT DETAILS ALTERED WITH PERMISSION</span>
           <span class="dot-separator">•</span>
           <span>CLICK ANY CARD TO FLIP</span>
         </div>
@@ -446,30 +448,76 @@
                 <div class="interactive-viewport-scroll" id="desktop-viewport-scroll">
                   <div class="wireframe-web-mockup">
                     <nav class="wireframe-nav-stub">
-                      <span>Our Story</span>
-                      <span>Schedule</span>
-                      <span>Travel & Stay</span>
-                      <span>RSVP</span>
+                      <button class="sim-tab-btn active" data-tab="story" type="button">Our Story</button>
+                      <button class="sim-tab-btn" data-tab="schedule" type="button">Schedule</button>
+                      <button class="sim-tab-btn" data-tab="travel" type="button">Travel & Stay</button>
+                      <button class="sim-tab-btn" data-tab="rsvp" type="button">RSVP</button>
                     </nav>
-                    <div class="wireframe-monogram-circle">J & E</div>
+
+                    <div class="wireframe-monogram-circle" id="mockup-monogram">J & E</div>
                     <h2 class="wireframe-hero-title" id="mockup-couple-title">Jonny & Esteban</h2>
                     <p class="wireframe-hero-date" id="mockup-location-date">November 20, 2026 • San Miguel de Allende, Mexico</p>
 
-                    <div class="wireframe-content-block">
-                      <h4>The Convergence</h4>
-                      <p id="mockup-narrative-text">
-                        "Two lives, two traditions, and the cultural richness of San Miguel de Allende converging into an unrepeatable celebration. We cannot wait to welcome you."
-                      </p>
+                    <!-- TAB 1: STORY -->
+                    <div class="sim-tab-pane active" id="pane-story">
+                      <div class="wireframe-content-block">
+                        <h4>The Convergence</h4>
+                        <p id="mockup-narrative-text">
+                          "Two lives, two traditions, and the cultural richness of San Miguel de Allende converging into an unrepeatable celebration. We cannot wait to welcome you."
+                        </p>
+                      </div>
+                      <div class="wireframe-content-block">
+                        <h4>Weekend at a Glance</h4>
+                        <p>Three days of celebration in the colonial heartland of Guanajuato. Tap 'Schedule' above to explore the weekend itinerary.</p>
+                      </div>
+                      <div style="margin-top: 1rem;">
+                        <button class="wireframe-rsvp-stub sim-jump-rsvp" type="button">RSVP for Celebration &rarr;</button>
+                      </div>
                     </div>
 
-                    <div class="wireframe-content-block">
-                      <h4>Weekend Journey</h4>
-                      <p>Friday: Sunset Mezcal Welcome • Saturday: Ceremony & Dinner • Sunday: Farewell Recovery Brunch</p>
+                    <!-- TAB 2: SCHEDULE -->
+                    <div class="sim-tab-pane" id="pane-schedule" style="display: none;">
+                      <div class="wireframe-content-block">
+                        <h4>Friday • Welcome Mezcal Cocktail</h4>
+                        <p>7:00 PM • Rooftop Sunset Lounge • Attire: Elevated Desert Chic</p>
+                      </div>
+                      <div class="wireframe-content-block">
+                        <h4>Saturday • Ceremony & Dinner</h4>
+                        <p>5:00 PM • Main Courtyard • Followed by coursed dinner & dancing until late</p>
+                      </div>
+                      <div class="wireframe-content-block">
+                        <h4>Sunday • Recovery Brunch</h4>
+                        <p>11:30 AM • Poolside Terrace • Casual linen & chilaquiles bar</p>
+                      </div>
                     </div>
 
-                    <div style="margin-top: 1rem;">
-                      <button class="wireframe-rsvp-stub" type="button">Confirm Attendance (RSVP)</button>
+                    <!-- TAB 3: TRAVEL -->
+                    <div class="sim-tab-pane" id="pane-travel" style="display: none;">
+                      <div class="wireframe-content-block">
+                        <h4>Getting Here</h4>
+                        <p>Recommended Airport: Querétaro (QRO) or León (BJX), followed by private shuttle transport arranged on your behalf.</p>
+                      </div>
+                      <div class="wireframe-content-block">
+                        <h4>Accommodations & Room Blocks</h4>
+                        <p>We have reserved exclusive boutique suites within walking distance of the historic town center. Use code CELEBRATION2026.</p>
+                      </div>
                     </div>
+
+                    <!-- TAB 4: RSVP -->
+                    <div class="sim-tab-pane" id="pane-rsvp" style="display: none;">
+                      <div class="wireframe-content-block">
+                        <h4>Confirm Your Attendance</h4>
+                        <p>Kindly respond by September 15, 2026 so we can finalize table arrangements with our atelier.</p>
+                        <div style="margin-top: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem; text-align: left; max-width: 320px; margin-inline: auto;">
+                          <input type="text" placeholder="Full Guest Name" style="padding: 0.5rem 0.8rem; font-size: 0.8rem; border: 1px solid #d5cec5; background: #fff; border-radius: 3px;" readonly value="Guest Simulation Preview" />
+                          <div style="display: flex; gap: 0.5rem;">
+                            <button type="button" style="flex: 1; padding: 0.5rem; font-size: 0.72rem; border: 1px solid #b89d74; background: #b89d74; color: #fff; border-radius: 3px;">Accepts with Pleasure</button>
+                            <button type="button" style="flex: 1; padding: 0.5rem; font-size: 0.72rem; border: 1px solid #d5cec5; background: transparent; color: #666; border-radius: 3px;">Declines with Regret</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -723,6 +771,43 @@
           btnDesktop.classList.remove('active');
           macbookDevice.style.display = 'none';
           iphoneDevice.style.display = 'flex';
+        });
+
+        // 6. Simulator Tab Switching Logic (Our Story, Schedule, Travel, RSVP)
+        const simTabBtns = document.querySelectorAll('.sim-tab-btn');
+        const simPanes = {
+          story: document.getElementById('pane-story'),
+          schedule: document.getElementById('pane-schedule'),
+          travel: document.getElementById('pane-travel'),
+          rsvp: document.getElementById('pane-rsvp')
+        };
+
+        function switchSimTab(tabKey) {
+          simTabBtns.forEach(b => {
+            if (b.getAttribute('data-tab') === tabKey) {
+              b.classList.add('active');
+            } else {
+              b.classList.remove('active');
+            }
+          });
+          Object.keys(simPanes).forEach(k => {
+            if (simPanes[k]) {
+              simPanes[k].style.display = (k === tabKey) ? 'block' : 'none';
+            }
+          });
+        }
+
+        simTabBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const target = btn.getAttribute('data-tab');
+            switchSimTab(target);
+          });
+        });
+
+        document.querySelectorAll('.sim-jump-rsvp').forEach(btn => {
+          btn.addEventListener('click', () => {
+            switchSimTab('rsvp');
+          });
         });
       });
     </script>
