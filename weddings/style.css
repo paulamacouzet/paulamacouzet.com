@@ -18,7 +18,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Preloader & Animations */
@@ -3277,28 +3277,12 @@ textarea.minimal-input {
   overflow: hidden;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.06);
   border-radius: 40px;
-}
-
-.hero-media-wrapper {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background-color: #eee9e6;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.hero-frame-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.35;
-}
-
-.hero-media-overlay {
+.hero-solid-placeholder {
   position: relative;
   z-index: 2;
   text-align: center;
@@ -3453,64 +3437,41 @@ textarea.minimal-input {
   background-color: #eee9e6;
   width: 100%;
   height: 100%;
-  min-height: 480px;
+  min-height: 520px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-.split-image-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background-color: #eee9e6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.solid-placeholder-center-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  color: #4a443e;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 2rem;
 }
 
-.split-editorial-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.85;
-}
-
-.split-placeholder-watermark {
-  position: absolute;
-  bottom: 2.5rem;
-  right: 2.5rem;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 0.6rem 1.4rem;
-  border-radius: 30px;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  color: #797166;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-}
-
-/* --- SECTION 3: PINNED SPLIT-SCROLL PHILOSOPHY --- */
-.philosophy-pinned-track {
-  height: 340vh;
-  position: relative;
-  width: 100%;
-}
-
-.philosophy-pinned-stage {
-  position: sticky;
-  top: 0;
-  height: 100vh;
+/* --- SECTION 3: PHILOSOPHY THREE LIVING THREADS --- */
+.home-philosophy-section {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 2.5rem;
-  overflow: hidden;
+  padding: 5rem 2rem 6rem;
   background-color: #ffffff;
   box-sizing: border-box;
+  position: relative;
+  width: 100%;
+}
+
+.philosophy-header-wrap {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 3rem;
 }
 
 .philosophy-stage-split {
@@ -3520,7 +3481,6 @@ textarea.minimal-input {
   justify-content: center;
   max-width: 1020px;
   width: 100%;
-  margin-top: 1.5rem;
 }
 
 .philosophy-stage-visual {
@@ -3545,7 +3505,7 @@ textarea.minimal-input {
 
 .botanical-square-box.convergence-active {
   border-color: #d4af37;
-  box-shadow: 0 16px 45px rgba(212, 175, 55, 0.22);
+  box-shadow: 0 16px 45px rgba(212, 175, 55, 0.25);
 }
 
 .botanical-interactive-art {
@@ -3571,7 +3531,7 @@ textarea.minimal-input {
 
 .botanical-svg-layer.layer-convergence.is-active {
   opacity: 1;
-  transform: scale(1.05);
+  transform: scale(1.06);
   filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.65));
 }
 
@@ -3588,8 +3548,8 @@ textarea.minimal-input {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #8c827a;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 0.25rem 0.8rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.3rem 0.9rem;
   border-radius: 12px;
   border: 1px solid rgba(184, 157, 116, 0.2);
 }
@@ -3608,10 +3568,10 @@ textarea.minimal-input {
   border-radius: 12px;
   padding: 2.8rem 2.6rem;
   box-shadow: 0 12px 35px rgba(44, 40, 37, 0.04);
-  min-height: 240px;
+  min-height: 270px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
   box-sizing: border-box;
@@ -3620,6 +3580,13 @@ textarea.minimal-input {
 .thread-display-card.convergence-glow {
   border-color: #d4af37;
   box-shadow: 0 16px 40px rgba(212, 175, 55, 0.16);
+}
+
+.thread-card-body-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .thread-item-content {
@@ -3647,6 +3614,107 @@ textarea.minimal-input {
 .golden-num {
   color: #d4af37;
   font-weight: 500;
+}
+
+.thread-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.45rem;
+  color: #2c2825;
+  margin-bottom: 0.8rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.thread-highlight {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #b89d74;
+  margin-bottom: 0.8rem;
+}
+
+.thread-body {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #6d665c;
+  font-weight: 300;
+  margin: 0;
+}
+
+.thread-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(184, 157, 116, 0.15);
+}
+
+.btn-thread-nav {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8c827a;
+  padding: 0.4rem 0.5rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-thread-nav:hover {
+  color: #2c2825;
+}
+
+.btn-thread-nav.btn-thread-next {
+  color: #b89d74;
+  font-weight: 500;
+}
+
+.btn-thread-nav.btn-thread-next:hover {
+  color: #2c2825;
+  transform: translateX(3px);
+}
+
+.btn-thread-nav.btn-thread-prev:hover {
+  transform: translateX(-3px);
+}
+
+.btn-thread-nav.btn-convergence-next {
+  color: #d4af37;
+  font-weight: 600;
+}
+
+.thread-step-nav {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.step-nav-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(184, 157, 116, 0.25);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.step-nav-dot.is-active {
+  background: #2c2825;
+  transform: scale(1.3);
+}
+
+.step-nav-dot.dot-convergence.is-active {
+  background: #d4af37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
 }
 
 .thread-title {
