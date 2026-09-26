@@ -2973,44 +2973,138 @@ textarea.minimal-input {
   margin: 0 auto;
   padding: 0 2rem 8rem;
 }
-.home-hero-editorial {
-  text-align: center;
-  padding: 5rem 1rem 4rem;
+/* --- HOME HERO EDITORIAL (50/50 SPLIT & LUXURY MOBILE) --- */
+.home-hero-split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: center;
+  min-height: calc(85vh - 80px);
+  padding: 3.5rem 0 5rem;
 }
-.home-hero-headline {
+.hero-split-content {
+  text-align: left;
+}
+.hero-split-content .hero-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #b89d74;
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+.hero-split-content .home-hero-headline {
   font-family: 'Cinzel', serif;
-  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-size: clamp(2.3rem, 4vw, 3.6rem);
   font-weight: 400;
-  line-height: 1.18;
+  line-height: 1.2;
   color: #2c2825;
-  margin: 1.2rem 0;
+  margin: 0 0 1.5rem;
 }
-.home-hero-sub {
-  font-size: 1.1rem;
+.hero-split-content .home-hero-sub {
+  font-size: 1.05rem;
   line-height: 1.8;
   color: #6d665c;
-  max-width: 680px;
-  margin: 0 auto 2.5rem;
+  max-width: 540px;
+  margin: 0 0 2.5rem;
   font-weight: 300;
 }
-.home-hero-actions {
+.hero-split-content .home-hero-actions {
   display: flex;
   gap: 1.2rem;
-  justify-content: center;
-  margin-bottom: 4rem;
+  align-items: center;
   flex-wrap: wrap;
 }
-.home-hero-media-wrapper {
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+.hero-split-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-editorial-frame {
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(184, 157, 116, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(44, 40, 37, 0.08);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+}
+.hero-editorial-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 64px -16px rgba(44, 40, 37, 0.12);
+}
+.hero-editorial-frame img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+.hero-frame-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8c827a;
+}
+.hero-frame-caption .gold-star {
+  color: #b89d74;
 }
 
-/* Philosophy */
+/* iPhone & Mobile Hero Layout */
+@media (max-width: 900px) {
+  .home-hero-split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    min-height: auto;
+    padding: 2rem 0.5rem 4rem;
+    text-align: center;
+  }
+  .hero-split-media {
+    order: 1;
+    width: 100%;
+  }
+  .hero-editorial-frame {
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  .hero-split-content {
+    order: 2;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+  .hero-split-content .home-hero-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-split-content .home-hero-actions {
+    justify-content: center;
+  }
+}
+
+/* Modern iPhone Viewport Safety & Pro Margins */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .home-hero-split {
+    padding-top: calc(2rem + env(safe-area-inset-top, 0px));
+  }
+}
+
+/* --- 2. PHILOSOPHY: THREE LIVING THREADS (STICKY SPLIT-SCROLL) --- */
 .home-philosophy-section {
-  text-align: center;
-  padding: 7rem 1rem;
+  padding: 7rem 0;
   border-top: 1px solid rgba(184, 157, 116, 0.2);
+}
+.philosophy-header-wrap {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 4rem;
 }
 .section-badge-wrap {
   margin-bottom: 1rem;
@@ -3020,80 +3114,245 @@ textarea.minimal-input {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #b89d74;
+  font-weight: 500;
 }
 .home-section-title {
   font-family: 'Cinzel', serif;
   font-size: clamp(2rem, 3.8vw, 2.8rem);
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.25;
   color: #2c2825;
-  margin: 1rem 0 1.2rem;
+  margin: 0.8rem 0 1.2rem;
 }
 .home-section-lead {
   font-size: 1.05rem;
   line-height: 1.8;
   color: #6d665c;
-  max-width: 700px;
-  margin: 0 auto 4rem;
   font-weight: 300;
 }
-.threads-grid {
+.philosophy-sticky-split {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  text-align: left;
-  margin-bottom: 4rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.5rem;
+  align-items: start;
 }
-@media (max-width: 850px) {
-  .threads-grid {
-    grid-template-columns: 1fr;
-  }
+.botanical-sticky-col {
+  position: sticky;
+  top: 120px;
 }
-.thread-card {
+.botanical-canvas-wrap {
+  background: #f7f3ee;
+  border: 1px solid rgba(184, 157, 116, 0.25);
+  border-radius: 8px;
+  padding: 2.2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+  position: relative;
+  text-align: center;
+}
+.botanical-header-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
   background: #ffffff;
-  padding: 2.5rem;
-  border: 1px solid rgba(184, 157, 116, 0.2);
-  border-radius: 4px;
+  border: 1px solid rgba(184, 157, 116, 0.3);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8c827a;
+  margin-bottom: 1.5rem;
 }
-.thread-num {
+.botanical-header-pill .pill-dot {
+  width: 6px;
+  height: 6px;
+  background: #b89d74;
+  border-radius: 50%;
+  animation: pulseGold 2s infinite ease-in-out;
+}
+@keyframes pulseGold {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.6); opacity: 0.3; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+.botanical-art-frame {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(184, 157, 116, 0.15);
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.botanical-art-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+.botanical-stem-nodes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.stem-marker {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(4px);
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6d665c;
+  border: 1px solid rgba(184, 157, 116, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+.stem-marker.is-active {
+  background: #2c2825;
+  color: #f7f3ee;
+  border-color: #b89d74;
+  box-shadow: 0 6px 18px rgba(184, 157, 116, 0.35);
+  transform: scale(1.08);
+}
+.stem-marker.marker-roots {
+  top: 15%;
+  left: 8%;
+}
+.stem-marker.marker-story {
+  top: 50%;
+  right: 8%;
+}
+.stem-marker.marker-land {
+  bottom: 15%;
+  left: 12%;
+}
+.stem-center-crest {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid #b89d74;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b89d74;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 20px rgba(184, 157, 116, 0.25);
+  transition: all 0.5s ease;
+}
+.stem-center-crest.all-active {
+  background: #b89d74;
+  color: #ffffff;
+  transform: translate(-50%, -50%) scale(1.15);
+  box-shadow: 0 8px 24px rgba(184, 157, 116, 0.5);
+}
+
+.botanical-canvas-legend {
+  margin-top: 1.2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8c827a;
+}
+.botanical-canvas-legend span {
+  color: #b89d74;
+  font-weight: 500;
+}
+
+/* Philosophy Narrative Cards (Right Column) */
+.philosophy-narrative-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.thread-scroll-card {
+  background: #ffffff;
+  padding: 3rem 2.8rem;
+  border: 1px solid rgba(184, 157, 116, 0.2);
+  border-radius: 6px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.thread-scroll-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0%;
+  background: #b89d74;
+  transition: height 0.4s ease;
+}
+.thread-scroll-card.is-active {
+  border-color: #b89d74;
+  box-shadow: 0 16px 36px rgba(44, 40, 37, 0.05);
+  transform: translateX(6px);
+}
+.thread-scroll-card.is-active::before {
+  height: 100%;
+}
+.thread-scroll-card .thread-num {
   font-family: 'Cinzel', serif;
-  font-size: 1.2rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
   color: #b89d74;
   margin-bottom: 0.8rem;
   display: block;
 }
-.thread-card h3 {
+.thread-scroll-card h3 {
   font-family: 'Cinzel', serif;
-  font-size: 1.25rem;
+  font-size: 1.45rem;
   color: #2c2825;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
   font-weight: 400;
 }
-.thread-card p {
-  font-size: 0.9rem;
-  line-height: 1.7;
+.thread-scroll-card p {
+  font-size: 0.95rem;
+  line-height: 1.75;
   color: #6d665c;
   font-weight: 300;
 }
-.botanical-metaphor-box {
-  margin-top: 2rem;
+@media (max-width: 900px) {
+  .philosophy-sticky-split {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .botanical-sticky-col {
+    position: relative;
+    top: 0;
+  }
+  .thread-scroll-card.is-active {
+    transform: none;
+  }
 }
 
-/* Fine Art Manifesto */
+/* --- 3. FINE ART & FRENCH SAVOIR-FAIRE MANIFESTO --- */
 .home-fine-art-section {
   background: #f7f3ee;
-  padding: 6rem 3.5rem;
-  border-radius: 6px;
-  margin: 4rem 0 7rem;
+  padding: 6.5rem 4rem;
+  border-radius: 8px;
+  margin: 5rem 0 7rem;
   border: 1px solid rgba(184, 157, 116, 0.25);
 }
 .fine-art-inner-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 4.5rem;
   align-items: center;
 }
-@media (max-width: 850px) {
+@media (max-width: 900px) {
   .fine-art-inner-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -3104,22 +3363,32 @@ textarea.minimal-input {
 }
 .fine-art-left h2 {
   font-family: 'Cinzel', serif;
-  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-size: clamp(2rem, 3.5vw, 2.7rem);
   font-weight: 400;
   color: #2c2825;
   margin: 1rem 0 1.2rem;
+  line-height: 1.2;
+}
+.fine-art-savoir-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #b89d74;
+  margin-bottom: 1.2rem;
+  display: block;
 }
 .fine-art-lead {
   font-size: 1.05rem;
   line-height: 1.8;
   color: #2c2825;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 .fine-art-body {
   font-size: 0.95rem;
-  line-height: 1.8;
+  line-height: 1.85;
   color: #6d665c;
   font-weight: 300;
+  margin-bottom: 1.2rem;
 }
 .craft-points-list {
   display: flex;
@@ -3130,12 +3399,21 @@ textarea.minimal-input {
   display: flex;
   gap: 1.2rem;
   align-items: flex-start;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 1.2rem 1.5rem;
+  border-radius: 6px;
+  border: 1px solid rgba(184, 157, 116, 0.15);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.craft-point:hover {
+  background: #ffffff;
+  transform: translateX(4px);
 }
 .diamond-gold {
   color: #b89d74;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   flex-shrink: 0;
-  margin-top: 0.15rem;
+  margin-top: 0.2rem;
 }
 .craft-point h4 {
   font-family: 'Cinzel', serif;
@@ -3151,44 +3429,151 @@ textarea.minimal-input {
   font-weight: 300;
 }
 
-/* Match Section */
+/* --- 4. WE ARE A GOOD MATCH IF... (SEQUENTIAL GOLDEN FILAMENT TIMELINE) --- */
 .home-match-section {
-  padding: 5rem 1rem 7rem;
+  padding: 6rem 1rem 7.5rem;
   text-align: center;
 }
 .match-inner {
   max-width: 820px;
   margin: 0 auto;
 }
-.match-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 3rem;
+.match-timeline-container {
+  position: relative;
+  margin-top: 4.5rem;
+  padding-left: 2.5rem;
   text-align: left;
 }
-.match-item {
-  display: flex;
-  gap: 1.2rem;
-  background: #ffffff;
-  padding: 1.8rem 2rem;
-  border: 1px solid rgba(184, 157, 116, 0.2);
-  border-radius: 4px;
+/* The vertical golden filament */
+.match-timeline-line {
+  position: absolute;
+  top: 15px;
+  bottom: 80px;
+  left: 11px;
+  width: 2px;
+  background: rgba(184, 157, 116, 0.2);
 }
-.match-item p {
+.match-timeline-progress {
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, #b89d74 0%, #d4bc94 100%);
+  transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 8px rgba(184, 157, 116, 0.5);
+}
+.match-timeline-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+.match-timeline-item {
+  position: relative;
+  display: flex;
+  gap: 1.8rem;
+  align-items: flex-start;
+  opacity: 0.45;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.match-timeline-item.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.match-node {
+  position: absolute;
+  left: -2.5rem;
+  top: 1.4rem;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid rgba(184, 157, 116, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+.match-node .node-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(184, 157, 116, 0.3);
+  transition: all 0.4s ease;
+}
+.match-timeline-item.is-revealed .match-node {
+  border-color: #b89d74;
+  box-shadow: 0 0 12px rgba(184, 157, 116, 0.4);
+}
+.match-timeline-item.is-revealed .node-dot {
+  background: #b89d74;
+}
+.match-content {
+  background: #ffffff;
+  padding: 1.8rem 2.2rem;
+  border: 1px solid rgba(184, 157, 116, 0.2);
+  border-radius: 6px;
+  flex: 1;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.02);
+  transition: border-color 0.4s ease;
+}
+.match-timeline-item.is-revealed .match-content {
+  border-color: rgba(184, 157, 116, 0.4);
+}
+.match-content h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  color: #2c2825;
+  margin-bottom: 0.6rem;
+  font-weight: 400;
+}
+.match-content p {
   font-size: 0.95rem;
   line-height: 1.7;
   color: #6d665c;
+  font-weight: 300;
+  margin: 0;
 }
-.match-item p strong {
+/* Concluding Seal Badge */
+.match-conclusion-badge {
+  margin-top: 3.5rem;
+  padding: 2.8rem 2.2rem;
+  background: #f7f3ee;
+  border: 1px solid #b89d74;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(184, 157, 116, 0.12);
+  opacity: 0.5;
+  transform: translateY(15px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.match-conclusion-badge.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.match-conclusion-badge .badge-emblem {
+  font-size: 1.5rem;
+  color: #b89d74;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+.match-conclusion-badge h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
   color: #2c2825;
-  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+.match-conclusion-badge p {
+  font-size: 0.95rem;
+  color: #6d665c;
+  max-width: 520px;
+  margin: 0 auto 1.8rem;
+  font-weight: 300;
 }
 
-/* Experience */
+/* --- 5. THE THREE-STEP EXPERIENCE (TAILOR-MADE FOR YOU) --- */
 .home-experience-section {
   text-align: center;
-  padding: 6rem 1rem 8rem;
+  padding: 6.5rem 1rem 8rem;
   border-top: 1px solid rgba(184, 157, 116, 0.2);
 }
 .experience-steps-grid {
@@ -3207,7 +3592,12 @@ textarea.minimal-input {
   background: #ffffff;
   padding: 2.5rem;
   border: 1px solid rgba(184, 157, 116, 0.2);
-  border-radius: 4px;
+  border-radius: 6px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.step-card:hover {
+  transform: translateY(-4px);
+  border-color: #b89d74;
 }
 .step-num {
   font-family: 'Cinzel', serif;
@@ -3229,6 +3619,137 @@ textarea.minimal-input {
   color: #6d665c;
   font-weight: 300;
 }
+
+/* --- INTERACTIVE EL MERCADITO MODAL / DRAWER --- */
+.mercadito-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 26, 23, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.mercadito-modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.mercadito-modal-card {
+  background: #fcfbf9;
+  border: 1px solid #b89d74;
+  border-radius: 10px;
+  max-width: 780px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 3rem;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  transform: translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mercadito-modal-overlay.is-open .mercadito-modal-card {
+  transform: translateY(0);
+}
+.mercadito-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #8c827a;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.5rem;
+  transition: color 0.2s ease;
+}
+.mercadito-close-btn:hover {
+  color: #2c2825;
+}
+.mercadito-modal-badge {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #b89d74;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.mercadito-modal-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  color: #2c2825;
+  margin-bottom: 0.6rem;
+  font-weight: 400;
+}
+.mercadito-modal-price {
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #b89d74;
+  margin-bottom: 1.4rem;
+  font-weight: 500;
+}
+.mercadito-modal-lead {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: #6d665c;
+  margin-bottom: 2.2rem;
+  font-weight: 300;
+}
+.mercadito-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 650px) {
+  .mercadito-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .mercadito-modal-card {
+    padding: 2rem 1.4rem;
+  }
+}
+.mercadito-pillar-item {
+  background: #ffffff;
+  padding: 1.2rem 1.4rem;
+  border-radius: 6px;
+  border: 1px solid rgba(184, 157, 116, 0.2);
+}
+.mercadito-pillar-item h5 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.98rem;
+  color: #2c2825;
+  margin-bottom: 0.4rem;
+}
+.mercadito-pillar-item p {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #6d665c;
+  margin: 0;
+  font-weight: 300;
+}
+.mercadito-planner-note {
+  background: #f7f3ee;
+  border-left: 3px solid #b89d74;
+  padding: 1.2rem 1.5rem;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 2.2rem;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #6d665c;
+}
+.mercadito-planner-note strong {
+  color: #2c2825;
+}
+
 
 /* Stories Teaser */
 .home-stories-teaser {
