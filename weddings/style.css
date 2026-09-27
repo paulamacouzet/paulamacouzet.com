@@ -18,7 +18,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   min-height: 100vh;
-  overflow-x: clip;
+  overflow-x: visible;
 }
 
 /* Preloader & Animations */
@@ -105,11 +105,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 3rem; /* Reduced padding to make menu less wide and thick */
-  position: sticky;
+  padding: 0.8rem 3rem;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   background-color: rgba(255, 251, 247, 0.95);
-  z-index: 100;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
 .mobile-nav-toggle {
@@ -3072,7 +3077,7 @@ textarea.minimal-input {
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.4s ease, visibility 0.4s ease;
-  z-index: 998;
+  z-index: 9998;
 }
 
 .luxury-drawer-backdrop.is-open {
@@ -3088,7 +3093,7 @@ textarea.minimal-input {
   width: min(400px, 86vw);
   height: 100vh;
   background-color: #ffffff;
-  z-index: 999;
+  z-index: 9999;
   transform: translateX(-100%);
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
@@ -3207,47 +3212,106 @@ textarea.minimal-input {
   text-transform: uppercase;
 }
 
-/* --- STACKING SHEET FLOW (LUXURY CURTAIN REVEAL) --- */
+/* --- STACKING SHEET FLOW (LUXURY ARCHIVAL PAPER CURTAIN REVEAL) --- */
 .home-stacking-flow {
   position: relative;
   width: 100%;
 }
 
 .home-sheet-section {
-  position: relative;
-  background-color: #ffffff;
-  box-shadow: 0 -25px 60px rgba(26, 24, 23, 0.06);
-  width: 100%;
-}
-
-/* Stacking z-indices */
-.sheet-hero {
-  z-index: 1;
   position: sticky;
   top: 0;
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 -25px 60px rgba(26, 24, 23, 0.08);
+  box-sizing: border-box;
+}
+
+/* Stacking z-indices & Individual Section Alignments */
+.sheet-hero {
+  z-index: 10;
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
   background-color: #fcfbfa;
   box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 70px;
 }
 
 .sheet-split {
-  z-index: 2;
+  z-index: 20;
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  background-color: #ffffff;
+  box-shadow: 0 -25px 60px rgba(26, 24, 23, 0.08);
 }
 
-.sheet-philosophy {
-  z-index: 3;
+.sheet-philosophy-track {
+  z-index: 30;
+  position: relative;
+  min-height: 380vh;
+  background-color: #ffffff;
+  box-shadow: 0 -25px 60px rgba(26, 24, 23, 0.08);
+  padding: 0;
+}
+
+.philosophy-sticky-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 5rem 2rem 3rem;
+  box-sizing: border-box;
 }
 
 .sheet-match {
-  z-index: 4;
+  z-index: 40;
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  background-color: #ffffff;
+  box-shadow: 0 -25px 60px rgba(26, 24, 23, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem 4rem;
 }
 
 .sheet-journey {
-  z-index: 5;
+  z-index: 50;
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  background-color: #fcfbfa;
+  box-shadow: 0 -25px 60px rgba(26, 24, 23, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem 4rem;
 }
 
 .sheet-mercadito {
-  z-index: 6;
+  z-index: 60;
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  background-color: #ffffff;
+  box-shadow: 0 -25px 60px rgba(26, 24, 23, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem 6rem;
 }
 
 /* --- SECTION 1: HERO SCALLOPED COVER --- */
@@ -4355,7 +4419,112 @@ textarea.minimal-input {
   font-weight: 300;
 }
 
-/* Objects Spotlight */
+/* Inset Editorial Advertisement Card: El Mercadito */
+.mercadito-ad-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.mercadito-ad-card {
+  background: #fdfbf7;
+  border: 1.5px solid rgba(184, 157, 116, 0.45);
+  border-radius: 12px;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(2rem, 5vw, 4rem);
+  box-shadow: 0 25px 60px rgba(26, 24, 23, 0.06);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.mercadito-ad-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(184, 157, 116, 0.2);
+  padding-bottom: 1.2rem;
+  margin-bottom: 2.8rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ad-badge-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #b89d74;
+  font-weight: 600;
+}
+
+.ad-badge-edition {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8c827a;
+}
+
+.mercadito-ad-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 4vw, 4.5rem);
+  align-items: center;
+}
+
+@media (max-width: 850px) {
+  .mercadito-ad-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .mercadito-ad-card {
+    padding: 2.2rem 1.8rem;
+  }
+}
+
+.mercadito-ad-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.mercadito-ad-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  font-weight: 400;
+  color: #2c2825;
+  margin: 0.8rem 0 1.2rem;
+  line-height: 1.2;
+}
+
+.mercadito-ad-desc {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: #6d665c;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.mercadito-ad-actions {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.mercadito-media-placeholder {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  background-color: #eee9e6;
+  border-radius: 8px;
+  border: 1px solid rgba(184, 157, 116, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Objects Spotlight (Legacy compatibility) */
 .home-objects-spotlight {
   padding: 6rem 3.5rem;
   background: #f7f3ee;
