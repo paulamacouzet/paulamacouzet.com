@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/projects", "destination": "https://paula-villa.vercel.app/projects" },
+    { "source": "/projects/:path*", "destination": "https://paula-villa.vercel.app/projects/:path*" },
+    { "source": "/programa/:path*", "destination": "https://paula-villa.vercel.app/programa/:path*" },
+    { "source": "/teatro/:path*", "destination": "https://paula-villa.vercel.app/teatro/:path*" },
+    { "source": "/_astro/:path*", "destination": "https://paula-villa.vercel.app/_astro/:path*" }
+  ]
+}
