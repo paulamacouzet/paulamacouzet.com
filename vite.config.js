@@ -9,6 +9,11 @@ export default defineConfig({
         weddings: resolve(__dirname, 'weddings/index.html'),
         gallery: resolve(__dirname, 'weddings/gallery/index.html'),
         websites: resolve(__dirname, 'weddings/websites/index.html'),
+        stories: resolve(__dirname, 'weddings/stories/index.html'),
+        collections: resolve(__dirname, 'weddings/collections/index.html'),
+        objects: resolve(__dirname, 'weddings/objects/index.html'),
+        journal: resolve(__dirname, 'weddings/journal/index.html'),
+        planners: resolve(__dirname, 'weddings/for-planners/index.html'),
         inquire: resolve(__dirname, 'weddings/inquire/index.html')
       }
     }

@@ -49,51 +49,54 @@
     </style>
   </head>
   <body>
-      <header class="main-header">
+      <!-- Header: Clean Modern Luxury Top Bar -->
+      <header class="main-header modern-luxury-header">
         <div class="nav-left">
-          <a href="/" class="brand-link">
-            <img src="/images/logo_paulamacouzet.png" alt="Paula Macouzet" class="brand-logo">
-          </a>
-          <nav class="nav-links">
-            <a href="/weddings/#about">about</a>
-            <a href="/weddings/#philosophy">philosophy</a>
-          </nav>
+          <button class="luxury-menu-trigger" id="luxury-menu-trigger" aria-label="Open Navigation Menu">
+            <span class="menu-dash">—</span>
+            <span class="menu-label">MENU</span>
+          </button>
         </div>
-        
+
         <div class="nav-center">
-          <a href="/weddings/" class="center-logo-link">
-            <img src="/images/Logo_weddings.png" alt="Wedding Identity Logo" class="center-logo">
+          <a href="/weddings/" class="center-brand-title">
+            <span class="brand-name">PAULA MACOUZET</span>
+            <span class="brand-sub">WEDDINGS</span>
           </a>
         </div>
-        
+
         <div class="nav-right">
-          <nav class="nav-links">
-            <a href="/weddings/#experience">experience</a>
-            <a href="/weddings/gallery/">selected works</a>
-            <a href="/weddings/inquire/">inquire</a>
-          </nav>
-        </div>
-        
-        <!-- Mobile Nav Toggle (Hidden on Desktop) -->
-        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Menu">
-          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
-            <line x1="3" y1="12" x2="21" y2="12" class="line-middle"></line>
-            <line x1="3" y1="6" x2="21" y2="6" class="line-top"></line>
-            <line x1="3" y1="18" x2="21" y2="18" class="line-bottom"></line>
-          </svg>
-        </button>
-        
-        <!-- Fullscreen Mobile Menu Overlay -->
-        <div id="mobile-menu" class="mobile-menu-overlay">
-          <nav class="mobile-nav-links">
-            <a href="/weddings/#about">about</a>
-            <a href="/weddings/#philosophy">philosophy</a>
-            <a href="/weddings/#experience">experience</a>
-            <a href="/weddings/gallery/">selected works</a>
-            <a href="/weddings/inquire/">inquire</a>
-          </nav>
+          <a href="/weddings/inquire/" class="header-inquire-link active-link">inquire</a>
         </div>
       </header>
+
+      <!-- Full-Height White Luxury Sidebar Drawer (Off-Canvas from Left) -->
+      <div class="luxury-drawer-backdrop" id="luxury-drawer-backdrop"></div>
+      <aside class="luxury-sidebar-drawer" id="luxury-sidebar-drawer" aria-label="Main Navigation Drawer">
+        <div class="drawer-header">
+          <span class="drawer-monogram">PM ⟡ WEDDINGS</span>
+          <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close Menu">
+            <span>CLOSE</span>
+            <span class="close-x">&times;</span>
+          </button>
+        </div>
+        <nav class="drawer-nav">
+          <ul class="drawer-nav-list">
+            <li><a href="/weddings/#philosophy" class="drawer-link">philosophy</a></li>
+            <li><a href="/weddings/collections/" class="drawer-link">the experience</a></li>
+            <li><a href="/weddings/stories/" class="drawer-link">stories</a></li>
+            <li><a href="/weddings/objects/" class="drawer-link">art &amp; objects</a></li>
+            <li><a href="/weddings/for-planners/" class="drawer-link">for planners</a></li>
+            <li><a href="/weddings/journal/" class="drawer-link">the journal</a></li>
+            <li><a href="/weddings/inquire/" class="drawer-link highlight-inquire">inquire</a></li>
+          </ul>
+        </nav>
+        <div class="drawer-footer">
+          <span class="drawer-footer-eyebrow">BESPOKE DIGITAL WORLDS &amp; WEDDING IDENTITY</span>
+          <p>Custom digital spaces, fine art heraldry &amp; paper suites for destination weddings worldwide.</p>
+          <span class="drawer-footer-loc">San Miguel de Allende • Mexico City • Worldwide</span>
+        </div>
+      </aside>
       
       <main class="inquire-page">
         <div class="inquire-header">
@@ -101,16 +104,36 @@
           <p>Tell us about your story and your wedding vision.</p>
         </div>
 
-        <!-- You will need to replace this action URL with your Formspree endpoint once created -->
         <form class="inquire-form-container" action="https://formspree.io/f/maenwzke" method="POST">
           <!-- Formspree redirect to custom thank you page -->
           <input type="hidden" name="_next" value="https://paulamacouzet.com/weddings/thank-you/">
+          
           <div class="form-group">
             <input type="text" name="name" class="minimal-input" placeholder="Full Name *" required>
           </div>
           
           <div class="form-group">
             <input type="email" name="email" class="minimal-input" placeholder="Email Address *" required>
+          </div>
+
+          <div class="form-group">
+            <select name="collection_interest" id="collection-select" class="minimal-input" required>
+              <option value="" disabled selected>Select Collection of Interest *</option>
+              <option value="signature">Collection II: The Signature Identity ($2,600 USD) — Signature</option>
+              <option value="digital">Collection I: The Digital Suite ($1,600 USD)</option>
+              <option value="atelier">Collection III: The Full Atelier ($3,600 USD)</option>
+              <option value="custom">Undecided / Bespoke Atelier Commission</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <select name="budget_range" id="budget-select" class="minimal-input" required>
+              <option value="" disabled selected>Estimated Design & Web Budget *</option>
+              <option value="1600-2500">$1,600 – $2,500 USD</option>
+              <option value="2500-3500">$2,600 – $3,500 USD</option>
+              <option value="3500-5000">$3,600 – $5,000+ USD</option>
+              <option value="flexible">Flexible / Seeking Guidance</option>
+            </select>
           </div>
           
           <div class="form-group">
@@ -122,11 +145,18 @@
           </div>
           
           <div class="form-group">
-            <input type="text" name="wedding_planner" class="minimal-input" placeholder="Do you have a wedding planner? If so, who?">
+            <input type="text" name="wedding_planner" id="planner-input" class="minimal-input" placeholder="Do you have a wedding planner? If so, who?">
+          </div>
+
+          <div class="form-group" style="margin-top: -0.5rem; margin-bottom: 1.5rem;">
+            <label style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; color: #797166; cursor: pointer;">
+              <input type="checkbox" name="is_wedding_planner" id="planner-checkbox" value="yes" style="accent-color: #b89d74; width: 16px; height: 16px;">
+              <span>I am a Wedding Planner inquiring on behalf of a client</span>
+            </label>
           </div>
           
           <div class="form-group">
-            <textarea name="vision" class="minimal-input" placeholder="Tell us about your wedding vision and what you're looking for... *" required></textarea>
+            <textarea name="vision" class="minimal-input" placeholder="Tell us about your wedding vision, your roots, and what you're looking for... *" required></textarea>
           </div>
           
           <button type="submit" class="submit-btn">Send Inquiry</button>
@@ -147,31 +177,68 @@
       </footer>
     
     <script>
-      // Hamburger Menu Logic
-      const navToggle = document.getElementById('mobile-nav-toggle');
-      const mobileMenu = document.getElementById('mobile-menu');
-      
-      if (navToggle && mobileMenu) {
-        navToggle.addEventListener('click', () => {
-          navToggle.classList.toggle('is-active');
-          mobileMenu.classList.toggle('is-open');
-          if (mobileMenu.classList.contains('is-open')) {
-            document.body.classList.add('menu-open');
-          } else {
-            document.body.classList.remove('menu-open');
-          }
-        });
-        
-        // Close menu when a link is clicked
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            navToggle.classList.remove('is-active');
-            mobileMenu.classList.remove('is-open');
-            document.body.classList.remove('menu-open');
-          });
-        });
+      // Luxury Drawer Navigation
+      const menuTrigger = document.getElementById('luxury-menu-trigger');
+      const drawer = document.getElementById('luxury-sidebar-drawer');
+      const drawerBackdrop = document.getElementById('luxury-drawer-backdrop');
+      const drawerClose = document.getElementById('drawer-close-btn');
+      const drawerLinks = document.querySelectorAll('.drawer-link');
+
+      function openDrawer() {
+        if (drawer && drawerBackdrop) {
+          drawer.classList.add('is-open');
+          drawerBackdrop.classList.add('is-open');
+          document.body.style.overflow = 'hidden';
+        }
       }
+
+      function closeDrawer() {
+        if (drawer && drawerBackdrop) {
+          drawer.classList.remove('is-open');
+          drawerBackdrop.classList.remove('is-open');
+          document.body.style.overflow = '';
+        }
+      }
+
+      if (menuTrigger) menuTrigger.addEventListener('click', openDrawer);
+      if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+      if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+
+      drawerLinks.forEach(link => {
+        link.addEventListener('click', closeDrawer);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeDrawer();
+      });
+
+      // Parse Query Params to pre-fill selections
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const tierParam = params.get('tier');
+        const sourceParam = params.get('source');
+
+        const collectionSelect = document.getElementById('collection-select');
+        const budgetSelect = document.getElementById('budget-select');
+        const plannerCheckbox = document.getElementById('planner-checkbox');
+
+        if (tierParam && collectionSelect) {
+          if (tierParam === 'digital') {
+            collectionSelect.value = 'digital';
+            if (budgetSelect) budgetSelect.value = '1600-2500';
+          } else if (tierParam === 'signature') {
+            collectionSelect.value = 'signature';
+            if (budgetSelect) budgetSelect.value = '2500-3500';
+          } else if (tierParam === 'atelier') {
+            collectionSelect.value = 'atelier';
+            if (budgetSelect) budgetSelect.value = '3500-5000';
+          }
+        }
+
+        if (sourceParam === 'planner' && plannerCheckbox) {
+          plannerCheckbox.checked = true;
+        }
+      } catch (e) {}
     </script>
   </body>
 </html>
